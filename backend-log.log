@@ -1,0 +1,871 @@
+2023-08-12 09:02:32.551  INFO 3816 --- [restartedMain] c.a.backend.BackendApplication           : Starting BackendApplication using Java 1.8.0_362 on SSymbol-PC with PID 3816 (D:\桌面\SpringWeb\backend\target\classes started by SSymbol in D:\桌面\SpringWeb)
+2023-08-12 09:02:32.556  INFO 3816 --- [restartedMain] c.a.backend.BackendApplication           : No active profile set, falling back to 1 default profile: "default"
+2023-08-12 09:02:32.595  INFO 3816 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-08-12 09:02:32.595  INFO 3816 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-08-12 09:02:33.528  INFO 3816 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9090 (http)
+2023-08-12 09:02:33.535  INFO 3816 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-08-12 09:02:33.536  INFO 3816 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.78]
+2023-08-12 09:02:33.606  INFO 3816 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-08-12 09:02:33.606  INFO 3816 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1009 ms
+2023-08-12 09:02:33.747  INFO 3816 --- [restartedMain] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2023-08-12 09:02:33.829  INFO 3816 --- [restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2023-08-12 09:02:34.754  WARN 3816 --- [restartedMain] c.b.m.core.injector.DefaultSqlInjector   : class com.application.backend.entity.Artworks ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2023-08-12 09:02:35.088  WARN 3816 --- [restartedMain] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2023-08-12 09:02:35.159  INFO 3816 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-08-12 09:02:35.182  INFO 3816 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9090 (http) with context path ''
+2023-08-12 09:02:35.190  INFO 3816 --- [restartedMain] c.a.backend.BackendApplication           : Started BackendApplication in 2.968 seconds (JVM running for 3.982)
+2023-08-12 10:06:12.956  INFO 3816 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2023-08-12 10:06:12.957  INFO 3816 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2023-08-12 10:21:38.083  INFO 12136 --- [restartedMain] c.a.backend.BackendApplication           : Starting BackendApplication using Java 1.8.0_362 on SSymbol-PC with PID 12136 (D:\桌面\SpringWeb\backend\target\classes started by SSymbol in D:\桌面\SpringWeb)
+2023-08-12 10:21:38.084  INFO 12136 --- [restartedMain] c.a.backend.BackendApplication           : No active profile set, falling back to 1 default profile: "default"
+2023-08-12 10:21:38.119  INFO 12136 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-08-12 10:21:38.119  INFO 12136 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-08-12 10:21:38.904  INFO 12136 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9090 (http)
+2023-08-12 10:21:38.912  INFO 12136 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-08-12 10:21:38.913  INFO 12136 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.78]
+2023-08-12 10:21:38.983  INFO 12136 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-08-12 10:21:38.983  INFO 12136 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 863 ms
+2023-08-12 10:21:39.094  INFO 12136 --- [restartedMain] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2023-08-12 10:21:39.166  INFO 12136 --- [restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2023-08-12 10:21:40.079  WARN 12136 --- [restartedMain] c.b.m.core.injector.DefaultSqlInjector   : class com.application.backend.entity.Artworks ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2023-08-12 10:21:40.350  WARN 12136 --- [restartedMain] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2023-08-12 10:21:40.421  INFO 12136 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-08-12 10:21:40.444  INFO 12136 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9090 (http) with context path ''
+2023-08-12 10:21:40.453  INFO 12136 --- [restartedMain] c.a.backend.BackendApplication           : Started BackendApplication in 2.646 seconds (JVM running for 3.545)
+2023-08-12 10:22:22.165  INFO 12136 --- [http-nio-9090-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-08-12 10:22:22.166  INFO 12136 --- [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-08-12 10:22:22.167  INFO 12136 --- [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-08-12 10:28:37.179  INFO 12136 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 1 deletion, 0 modifications)
+2023-08-12 10:28:37.646  INFO 12136 --- [Thread-10] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-08-12 10:28:37.647  INFO 12136 --- [Thread-10] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-08-12 10:28:37.651  INFO 12136 --- [Thread-10] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2023-08-12 10:28:37.656  INFO 12136 --- [Thread-10] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2023-08-12 10:28:37.780  INFO 12136 --- [restartedMain] c.a.backend.BackendApplication           : Starting BackendApplication using Java 1.8.0_362 on SSymbol-PC with PID 12136 (D:\桌面\SpringWeb\backend\target\classes started by SSymbol in D:\桌面\SpringWeb)
+2023-08-12 10:28:37.781  INFO 12136 --- [restartedMain] c.a.backend.BackendApplication           : No active profile set, falling back to 1 default profile: "default"
+2023-08-12 10:28:37.960  INFO 12136 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9090 (http)
+2023-08-12 10:28:37.961  INFO 12136 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-08-12 10:28:37.961  INFO 12136 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.78]
+2023-08-12 10:28:37.981  INFO 12136 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-08-12 10:28:37.981  INFO 12136 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 199 ms
+2023-08-12 10:28:38.004  INFO 12136 --- [restartedMain] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2023-08-12 10:28:38.012  INFO 12136 --- [restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-2} inited
+2023-08-12 10:28:38.518  WARN 12136 --- [restartedMain] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2023-08-12 10:28:38.535  INFO 12136 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-08-12 10:28:38.544  INFO 12136 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9090 (http) with context path ''
+2023-08-12 10:28:38.547  INFO 12136 --- [restartedMain] c.a.backend.BackendApplication           : Started BackendApplication in 0.791 seconds (JVM running for 421.639)
+2023-08-12 10:28:38.549  INFO 12136 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2023-08-12 10:33:16.397  INFO 12136 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 1 deletion, 0 modifications)
+2023-08-12 10:33:16.887  INFO 12136 --- [Thread-16] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-08-12 10:33:16.891  INFO 12136 --- [Thread-16] com.alibaba.druid.pool.DruidDataSource   : {dataSource-2} closing ...
+2023-08-12 10:33:16.891  INFO 12136 --- [Thread-16] com.alibaba.druid.pool.DruidDataSource   : {dataSource-2} closed
+2023-08-12 10:33:16.990  INFO 12136 --- [restartedMain] c.a.backend.BackendApplication           : Starting BackendApplication using Java 1.8.0_362 on SSymbol-PC with PID 12136 (D:\桌面\SpringWeb\backend\target\classes started by SSymbol in D:\桌面\SpringWeb)
+2023-08-12 10:33:16.990  INFO 12136 --- [restartedMain] c.a.backend.BackendApplication           : No active profile set, falling back to 1 default profile: "default"
+2023-08-12 10:33:17.168  INFO 12136 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9090 (http)
+2023-08-12 10:33:17.168  INFO 12136 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-08-12 10:33:17.168  INFO 12136 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.78]
+2023-08-12 10:33:17.183  INFO 12136 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-08-12 10:33:17.183  INFO 12136 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 192 ms
+2023-08-12 10:33:17.199  INFO 12136 --- [restartedMain] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2023-08-12 10:33:17.206  INFO 12136 --- [restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-3} inited
+2023-08-12 10:33:17.693  WARN 12136 --- [restartedMain] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2023-08-12 10:33:17.707  INFO 12136 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-08-12 10:33:17.715  INFO 12136 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9090 (http) with context path ''
+2023-08-12 10:33:17.717  INFO 12136 --- [restartedMain] c.a.backend.BackendApplication           : Started BackendApplication in 0.751 seconds (JVM running for 700.81)
+2023-08-12 10:33:17.718  INFO 12136 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2023-08-12 10:33:19.161  INFO 12136 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 2 class path changes (2 additions, 0 deletions, 0 modifications)
+2023-08-12 10:33:19.626  INFO 12136 --- [Thread-20] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-08-12 10:33:19.631  INFO 12136 --- [Thread-20] com.alibaba.druid.pool.DruidDataSource   : {dataSource-3} closing ...
+2023-08-12 10:33:19.631  INFO 12136 --- [Thread-20] com.alibaba.druid.pool.DruidDataSource   : {dataSource-3} closed
+2023-08-12 10:33:19.723  INFO 12136 --- [restartedMain] c.a.backend.BackendApplication           : Starting BackendApplication using Java 1.8.0_362 on SSymbol-PC with PID 12136 (D:\桌面\SpringWeb\backend\target\classes started by SSymbol in D:\桌面\SpringWeb)
+2023-08-12 10:33:19.724  INFO 12136 --- [restartedMain] c.a.backend.BackendApplication           : No active profile set, falling back to 1 default profile: "default"
+2023-08-12 10:33:19.860  INFO 12136 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9090 (http)
+2023-08-12 10:33:19.861  INFO 12136 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-08-12 10:33:19.861  INFO 12136 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.78]
+2023-08-12 10:33:19.875  INFO 12136 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-08-12 10:33:19.875  INFO 12136 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 150 ms
+2023-08-12 10:33:19.890  INFO 12136 --- [restartedMain] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2023-08-12 10:33:19.895  INFO 12136 --- [restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-4} inited
+2023-08-12 10:33:20.375  WARN 12136 --- [restartedMain] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2023-08-12 10:33:20.389  INFO 12136 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-08-12 10:33:20.396  INFO 12136 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9090 (http) with context path ''
+2023-08-12 10:33:20.399  INFO 12136 --- [restartedMain] c.a.backend.BackendApplication           : Started BackendApplication in 0.696 seconds (JVM running for 703.491)
+2023-08-12 10:33:20.400  INFO 12136 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2023-08-12 10:33:28.987  INFO 12136 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 55 class path changes (55 additions, 0 deletions, 0 modifications)
+2023-08-12 10:33:29.416  INFO 12136 --- [Thread-24] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-08-12 10:33:29.420  INFO 12136 --- [Thread-24] com.alibaba.druid.pool.DruidDataSource   : {dataSource-4} closing ...
+2023-08-12 10:33:29.420  INFO 12136 --- [Thread-24] com.alibaba.druid.pool.DruidDataSource   : {dataSource-4} closed
+2023-08-12 10:33:29.498  INFO 12136 --- [restartedMain] c.a.backend.BackendApplication           : Starting BackendApplication using Java 1.8.0_362 on SSymbol-PC with PID 12136 (D:\桌面\SpringWeb\backend\target\classes started by SSymbol in D:\桌面\SpringWeb)
+2023-08-12 10:33:29.499  INFO 12136 --- [restartedMain] c.a.backend.BackendApplication           : No active profile set, falling back to 1 default profile: "default"
+2023-08-12 10:33:29.637  INFO 12136 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9090 (http)
+2023-08-12 10:33:29.637  INFO 12136 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-08-12 10:33:29.637  INFO 12136 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.78]
+2023-08-12 10:33:29.652  INFO 12136 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-08-12 10:33:29.652  INFO 12136 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 152 ms
+2023-08-12 10:33:29.667  INFO 12136 --- [restartedMain] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2023-08-12 10:33:29.673  INFO 12136 --- [restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-5} inited
+2023-08-12 10:33:30.139  WARN 12136 --- [restartedMain] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2023-08-12 10:33:30.152  INFO 12136 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-08-12 10:33:30.159  INFO 12136 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9090 (http) with context path ''
+2023-08-12 10:33:30.163  INFO 12136 --- [restartedMain] c.a.backend.BackendApplication           : Started BackendApplication in 0.686 seconds (JVM running for 713.255)
+2023-08-12 10:33:30.163  INFO 12136 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2023-08-12 10:33:42.063  INFO 12136 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-5} closing ...
+2023-08-12 10:33:42.063  INFO 12136 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-5} closed
+2023-08-12 10:33:45.466  INFO 2344 --- [restartedMain] c.a.backend.BackendApplication           : Starting BackendApplication using Java 1.8.0_362 on SSymbol-PC with PID 2344 (D:\桌面\SpringWeb\backend\target\classes started by SSymbol in D:\桌面\SpringWeb)
+2023-08-12 10:33:45.467  INFO 2344 --- [restartedMain] c.a.backend.BackendApplication           : No active profile set, falling back to 1 default profile: "default"
+2023-08-12 10:33:45.501  INFO 2344 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-08-12 10:33:45.501  INFO 2344 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-08-12 10:33:46.198  INFO 2344 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9090 (http)
+2023-08-12 10:33:46.204  INFO 2344 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-08-12 10:33:46.204  INFO 2344 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.78]
+2023-08-12 10:33:46.269  INFO 2344 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-08-12 10:33:46.269  INFO 2344 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 767 ms
+2023-08-12 10:33:46.371  INFO 2344 --- [restartedMain] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2023-08-12 10:33:46.443  INFO 2344 --- [restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2023-08-12 10:33:47.380  WARN 2344 --- [restartedMain] c.b.m.core.injector.DefaultSqlInjector   : class com.application.backend.entity.Artworks ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2023-08-12 10:33:47.678  WARN 2344 --- [restartedMain] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2023-08-12 10:33:47.754  INFO 2344 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-08-12 10:33:47.776  INFO 2344 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9090 (http) with context path ''
+2023-08-12 10:33:47.784  INFO 2344 --- [restartedMain] c.a.backend.BackendApplication           : Started BackendApplication in 2.586 seconds (JVM running for 3.49)
+2023-08-12 10:33:51.912  INFO 2344 --- [http-nio-9090-exec-3] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-08-12 10:33:51.913  INFO 2344 --- [http-nio-9090-exec-3] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-08-12 10:33:51.914  INFO 2344 --- [http-nio-9090-exec-3] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-08-12 10:34:20.064  INFO 2344 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 55 class path changes (0 additions, 55 deletions, 0 modifications)
+2023-08-12 10:34:20.478  INFO 2344 --- [Thread-10] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-08-12 10:34:20.479  INFO 2344 --- [Thread-10] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-08-12 10:34:20.484  INFO 2344 --- [Thread-10] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2023-08-12 10:34:20.488  INFO 2344 --- [Thread-10] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2023-08-12 10:34:20.597  INFO 2344 --- [restartedMain] c.a.backend.BackendApplication           : Starting BackendApplication using Java 1.8.0_362 on SSymbol-PC with PID 2344 (D:\桌面\SpringWeb\backend\target\classes started by SSymbol in D:\桌面\SpringWeb)
+2023-08-12 10:34:20.597  INFO 2344 --- [restartedMain] c.a.backend.BackendApplication           : No active profile set, falling back to 1 default profile: "default"
+2023-08-12 10:34:20.783  INFO 2344 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9090 (http)
+2023-08-12 10:34:20.784  INFO 2344 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-08-12 10:34:20.784  INFO 2344 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.78]
+2023-08-12 10:34:20.801  INFO 2344 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-08-12 10:34:20.801  INFO 2344 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 202 ms
+2023-08-12 10:34:20.818  INFO 2344 --- [restartedMain] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2023-08-12 10:34:20.824  INFO 2344 --- [restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-2} inited
+2023-08-12 10:34:21.327  WARN 2344 --- [restartedMain] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2023-08-12 10:34:21.343  INFO 2344 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-08-12 10:34:21.352  INFO 2344 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9090 (http) with context path ''
+2023-08-12 10:34:21.354  INFO 2344 --- [restartedMain] c.a.backend.BackendApplication           : Started BackendApplication in 0.783 seconds (JVM running for 37.061)
+2023-08-12 10:34:21.356  INFO 2344 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2023-08-12 10:34:24.008  INFO 2344 --- [http-nio-9090-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-08-12 10:34:24.008  INFO 2344 --- [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-08-12 10:34:24.010  INFO 2344 --- [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2023-08-12 10:40:40.974  INFO 2344 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-2} closing ...
+2023-08-12 10:40:40.974  INFO 2344 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-2} closed
+2023-08-12 10:40:47.508  INFO 21452 --- [restartedMain] c.a.backend.BackendApplication           : Starting BackendApplication using Java 1.8.0_362 on SSymbol-PC with PID 21452 (D:\桌面\SpringWeb\backend\target\classes started by SSymbol in D:\桌面\SpringWeb)
+2023-08-12 10:40:47.509  INFO 21452 --- [restartedMain] c.a.backend.BackendApplication           : No active profile set, falling back to 1 default profile: "default"
+2023-08-12 10:40:47.542  INFO 21452 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-08-12 10:40:47.542  INFO 21452 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-08-12 10:40:48.257  INFO 21452 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9090 (http)
+2023-08-12 10:40:48.264  INFO 21452 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-08-12 10:40:48.264  INFO 21452 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.78]
+2023-08-12 10:40:48.332  INFO 21452 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-08-12 10:40:48.333  INFO 21452 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 791 ms
+2023-08-12 10:40:48.434  INFO 21452 --- [restartedMain] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2023-08-12 10:40:48.496  INFO 21452 --- [restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2023-08-12 10:40:49.405  WARN 21452 --- [restartedMain] c.b.m.core.injector.DefaultSqlInjector   : class com.application.backend.entity.Artworks ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2023-08-12 10:40:49.675  WARN 21452 --- [restartedMain] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2023-08-12 10:40:49.740  INFO 21452 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-08-12 10:40:49.761  INFO 21452 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9090 (http) with context path ''
+2023-08-12 10:40:49.769  INFO 21452 --- [restartedMain] c.a.backend.BackendApplication           : Started BackendApplication in 2.525 seconds (JVM running for 3.411)
+2023-08-12 10:40:53.542  INFO 21452 --- [http-nio-9090-exec-4] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-08-12 10:40:53.542  INFO 21452 --- [http-nio-9090-exec-4] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-08-12 10:40:53.543  INFO 21452 --- [http-nio-9090-exec-4] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-08-12 10:43:57.941  INFO 21452 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2023-08-12 10:43:57.946  INFO 21452 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2023-08-12 10:44:03.002  INFO 16964 --- [restartedMain] c.a.backend.BackendApplication           : Starting BackendApplication using Java 1.8.0_362 on SSymbol-PC with PID 16964 (D:\桌面\SpringWeb\backend\target\classes started by SSymbol in D:\桌面\SpringWeb)
+2023-08-12 10:44:03.003  INFO 16964 --- [restartedMain] c.a.backend.BackendApplication           : No active profile set, falling back to 1 default profile: "default"
+2023-08-12 10:44:03.037  INFO 16964 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-08-12 10:44:03.038  INFO 16964 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-08-12 10:44:03.814  INFO 16964 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9090 (http)
+2023-08-12 10:44:03.820  INFO 16964 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-08-12 10:44:03.821  INFO 16964 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.78]
+2023-08-12 10:44:03.881  INFO 16964 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-08-12 10:44:03.881  INFO 16964 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 843 ms
+2023-08-12 10:44:03.968  INFO 16964 --- [restartedMain] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2023-08-12 10:44:04.021  INFO 16964 --- [restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2023-08-12 10:44:04.893  WARN 16964 --- [restartedMain] c.b.m.core.injector.DefaultSqlInjector   : class com.application.backend.entity.Artworks ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2023-08-12 10:44:05.163  WARN 16964 --- [restartedMain] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2023-08-12 10:44:05.228  INFO 16964 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-08-12 10:44:05.251  INFO 16964 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9090 (http) with context path ''
+2023-08-12 10:44:05.260  INFO 16964 --- [restartedMain] c.a.backend.BackendApplication           : Started BackendApplication in 2.544 seconds (JVM running for 3.427)
+2023-08-12 10:44:09.627  INFO 16964 --- [http-nio-9090-exec-3] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-08-12 10:44:09.628  INFO 16964 --- [http-nio-9090-exec-3] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-08-12 10:44:09.628  INFO 16964 --- [http-nio-9090-exec-3] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2023-08-12 10:47:07.397  INFO 16964 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2023-08-12 10:47:07.402  INFO 16964 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2023-08-12 10:47:13.616  INFO 12252 --- [restartedMain] c.a.backend.BackendApplication           : Starting BackendApplication using Java 1.8.0_362 on SSymbol-PC with PID 12252 (D:\桌面\SpringWeb\backend\target\classes started by SSymbol in D:\桌面\SpringWeb)
+2023-08-12 10:47:13.618  INFO 12252 --- [restartedMain] c.a.backend.BackendApplication           : No active profile set, falling back to 1 default profile: "default"
+2023-08-12 10:47:13.651  INFO 12252 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-08-12 10:47:13.651  INFO 12252 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-08-12 10:47:14.352  INFO 12252 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9090 (http)
+2023-08-12 10:47:14.358  INFO 12252 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-08-12 10:47:14.358  INFO 12252 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.78]
+2023-08-12 10:47:14.418  INFO 12252 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-08-12 10:47:14.418  INFO 12252 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 767 ms
+2023-08-12 10:47:14.509  INFO 12252 --- [restartedMain] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2023-08-12 10:47:14.575  INFO 12252 --- [restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2023-08-12 10:47:15.506  WARN 12252 --- [restartedMain] c.b.m.core.injector.DefaultSqlInjector   : class com.application.backend.entity.Artworks ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2023-08-12 10:47:15.812  WARN 12252 --- [restartedMain] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2023-08-12 10:47:15.884  INFO 12252 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-08-12 10:47:15.909  INFO 12252 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9090 (http) with context path ''
+2023-08-12 10:47:15.917  INFO 12252 --- [restartedMain] c.a.backend.BackendApplication           : Started BackendApplication in 2.577 seconds (JVM running for 3.482)
+2023-08-12 10:47:19.301  INFO 12252 --- [http-nio-9090-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-08-12 10:47:19.301  INFO 12252 --- [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-08-12 10:47:19.302  INFO 12252 --- [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2023-08-12 10:49:03.753  INFO 12252 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2023-08-12 10:49:03.759  INFO 12252 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2023-08-12 10:49:08.894  INFO 1540 --- [restartedMain] c.a.backend.BackendApplication           : Starting BackendApplication using Java 1.8.0_362 on SSymbol-PC with PID 1540 (D:\桌面\SpringWeb\backend\target\classes started by SSymbol in D:\桌面\SpringWeb)
+2023-08-12 10:49:08.895  INFO 1540 --- [restartedMain] c.a.backend.BackendApplication           : No active profile set, falling back to 1 default profile: "default"
+2023-08-12 10:49:08.930  INFO 1540 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-08-12 10:49:08.930  INFO 1540 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-08-12 10:49:09.705  INFO 1540 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9090 (http)
+2023-08-12 10:49:09.711  INFO 1540 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-08-12 10:49:09.711  INFO 1540 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.78]
+2023-08-12 10:49:09.770  INFO 1540 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-08-12 10:49:09.771  INFO 1540 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 840 ms
+2023-08-12 10:49:09.856  INFO 1540 --- [restartedMain] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2023-08-12 10:49:09.911  INFO 1540 --- [restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2023-08-12 10:49:10.785  WARN 1540 --- [restartedMain] c.b.m.core.injector.DefaultSqlInjector   : class com.application.backend.entity.Artworks ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2023-08-12 10:49:11.047  WARN 1540 --- [restartedMain] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2023-08-12 10:49:11.112  INFO 1540 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-08-12 10:49:11.136  INFO 1540 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9090 (http) with context path ''
+2023-08-12 10:49:11.144  INFO 1540 --- [restartedMain] c.a.backend.BackendApplication           : Started BackendApplication in 2.537 seconds (JVM running for 3.439)
+2023-08-12 10:49:17.280  INFO 1540 --- [http-nio-9090-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-08-12 10:49:17.280  INFO 1540 --- [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-08-12 10:49:17.282  INFO 1540 --- [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2023-08-12 10:51:30.258  INFO 1540 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 1 deletion, 0 modifications)
+2023-08-12 10:51:30.734  INFO 1540 --- [Thread-10] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-08-12 10:51:30.735  INFO 1540 --- [Thread-10] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-08-12 10:51:30.740  INFO 1540 --- [Thread-10] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2023-08-12 10:51:30.745  INFO 1540 --- [Thread-10] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2023-08-12 10:51:30.874  INFO 1540 --- [restartedMain] c.a.backend.BackendApplication           : Starting BackendApplication using Java 1.8.0_362 on SSymbol-PC with PID 1540 (D:\桌面\SpringWeb\backend\target\classes started by SSymbol in D:\桌面\SpringWeb)
+2023-08-12 10:51:30.874  INFO 1540 --- [restartedMain] c.a.backend.BackendApplication           : No active profile set, falling back to 1 default profile: "default"
+2023-08-12 10:51:31.071  INFO 1540 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9090 (http)
+2023-08-12 10:51:31.072  INFO 1540 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-08-12 10:51:31.072  INFO 1540 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.78]
+2023-08-12 10:51:31.088  INFO 1540 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-08-12 10:51:31.088  INFO 1540 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 212 ms
+2023-08-12 10:51:31.107  INFO 1540 --- [restartedMain] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2023-08-12 10:51:31.113  INFO 1540 --- [restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-2} inited
+2023-08-12 10:51:31.607  WARN 1540 --- [restartedMain] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2023-08-12 10:51:31.623  INFO 1540 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-08-12 10:51:31.632  INFO 1540 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9090 (http) with context path ''
+2023-08-12 10:51:31.635  INFO 1540 --- [restartedMain] c.a.backend.BackendApplication           : Started BackendApplication in 0.79 seconds (JVM running for 143.93)
+2023-08-12 10:51:31.636  INFO 1540 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2023-08-12 10:51:34.083  INFO 1540 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (1 addition, 0 deletions, 0 modifications)
+2023-08-12 10:51:34.497  INFO 1540 --- [Thread-16] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-08-12 10:51:34.502  INFO 1540 --- [Thread-16] com.alibaba.druid.pool.DruidDataSource   : {dataSource-2} closing ...
+2023-08-12 10:51:34.502  INFO 1540 --- [Thread-16] com.alibaba.druid.pool.DruidDataSource   : {dataSource-2} closed
+2023-08-12 10:51:34.597  INFO 1540 --- [restartedMain] c.a.backend.BackendApplication           : Starting BackendApplication using Java 1.8.0_362 on SSymbol-PC with PID 1540 (D:\桌面\SpringWeb\backend\target\classes started by SSymbol in D:\桌面\SpringWeb)
+2023-08-12 10:51:34.597  INFO 1540 --- [restartedMain] c.a.backend.BackendApplication           : No active profile set, falling back to 1 default profile: "default"
+2023-08-12 10:51:34.761  INFO 1540 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9090 (http)
+2023-08-12 10:51:34.761  INFO 1540 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-08-12 10:51:34.761  INFO 1540 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.78]
+2023-08-12 10:51:34.776  INFO 1540 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-08-12 10:51:34.776  INFO 1540 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 177 ms
+2023-08-12 10:51:34.793  INFO 1540 --- [restartedMain] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2023-08-12 10:51:34.799  INFO 1540 --- [restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-3} inited
+2023-08-12 10:51:35.270  WARN 1540 --- [restartedMain] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2023-08-12 10:51:35.284  INFO 1540 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-08-12 10:51:35.292  INFO 1540 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9090 (http) with context path ''
+2023-08-12 10:51:35.295  INFO 1540 --- [restartedMain] c.a.backend.BackendApplication           : Started BackendApplication in 0.72 seconds (JVM running for 147.59)
+2023-08-12 10:51:35.296  INFO 1540 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2023-08-12 10:51:42.750  INFO 1540 --- [http-nio-9090-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-08-12 10:51:42.750  INFO 1540 --- [http-nio-9090-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-08-12 10:51:42.751  INFO 1540 --- [http-nio-9090-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-08-12 10:52:07.558  INFO 1540 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-3} closing ...
+2023-08-12 10:52:07.559  INFO 1540 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-3} closed
+2023-08-12 10:52:09.722  INFO 12616 --- [restartedMain] c.a.backend.BackendApplication           : Starting BackendApplication using Java 1.8.0_362 on SSymbol-PC with PID 12616 (D:\桌面\SpringWeb\backend\target\classes started by SSymbol in D:\桌面\SpringWeb)
+2023-08-12 10:52:09.723  INFO 12616 --- [restartedMain] c.a.backend.BackendApplication           : No active profile set, falling back to 1 default profile: "default"
+2023-08-12 10:52:09.755  INFO 12616 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-08-12 10:52:09.755  INFO 12616 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-08-12 10:52:10.460  INFO 12616 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9090 (http)
+2023-08-12 10:52:10.465  INFO 12616 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-08-12 10:52:10.466  INFO 12616 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.78]
+2023-08-12 10:52:10.531  INFO 12616 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-08-12 10:52:10.531  INFO 12616 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 775 ms
+2023-08-12 10:52:10.627  INFO 12616 --- [restartedMain] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2023-08-12 10:52:10.686  INFO 12616 --- [restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2023-08-12 10:52:11.584  WARN 12616 --- [restartedMain] c.b.m.core.injector.DefaultSqlInjector   : class com.application.backend.entity.Artworks ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2023-08-12 10:52:11.855  WARN 12616 --- [restartedMain] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2023-08-12 10:52:11.920  INFO 12616 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-08-12 10:52:11.943  INFO 12616 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9090 (http) with context path ''
+2023-08-12 10:52:11.950  INFO 12616 --- [restartedMain] c.a.backend.BackendApplication           : Started BackendApplication in 2.492 seconds (JVM running for 3.404)
+2023-08-12 10:52:15.115  INFO 12616 --- [http-nio-9090-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-08-12 10:52:15.115  INFO 12616 --- [http-nio-9090-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-08-12 10:52:15.116  INFO 12616 --- [http-nio-9090-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2023-08-12 11:00:19.865 ERROR 12616 --- [http-nio-9090-exec-7] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception
+
+javax.imageio.IIOException: Can't read input file!
+	at javax.imageio.ImageIO.read(ImageIO.java:1302) ~[na:1.8.0_362]
+	at com.application.backend.services.impl.ArtworkServiceImpl.downloadArtworks(ArtworkServiceImpl.java:101) ~[classes/:na]
+	at com.application.backend.controller.ArtworksController.downloadArtworks(ArtworksController.java:55) ~[classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_362]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_362]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_362]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_362]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205) ~[spring-web-5.3.29.jar:5.3.29]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150) ~[spring-web-5.3.29.jar:5.3.29]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117) ~[spring-webmvc-5.3.29.jar:5.3.29]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895) ~[spring-webmvc-5.3.29.jar:5.3.29]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808) ~[spring-webmvc-5.3.29.jar:5.3.29]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.3.29.jar:5.3.29]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1072) ~[spring-webmvc-5.3.29.jar:5.3.29]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:965) ~[spring-webmvc-5.3.29.jar:5.3.29]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.29.jar:5.3.29]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) ~[spring-webmvc-5.3.29.jar:5.3.29]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:529) ~[tomcat-embed-core-9.0.78.jar:4.0.FR]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.29.jar:5.3.29]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:623) ~[tomcat-embed-core-9.0.78.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:209) ~[tomcat-embed-core-9.0.78.jar:9.0.78]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.78.jar:9.0.78]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-9.0.78.jar:9.0.78]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.78.jar:9.0.78]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.78.jar:9.0.78]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.29.jar:5.3.29]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.29.jar:5.3.29]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.78.jar:9.0.78]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.78.jar:9.0.78]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.3.29.jar:5.3.29]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.29.jar:5.3.29]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.78.jar:9.0.78]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.78.jar:9.0.78]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.3.29.jar:5.3.29]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.29.jar:5.3.29]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.78.jar:9.0.78]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.78.jar:9.0.78]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-9.0.78.jar:9.0.78]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) [tomcat-embed-core-9.0.78.jar:9.0.78]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:481) [tomcat-embed-core-9.0.78.jar:9.0.78]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130) [tomcat-embed-core-9.0.78.jar:9.0.78]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) [tomcat-embed-core-9.0.78.jar:9.0.78]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-9.0.78.jar:9.0.78]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [tomcat-embed-core-9.0.78.jar:9.0.78]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:390) [tomcat-embed-core-9.0.78.jar:9.0.78]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) [tomcat-embed-core-9.0.78.jar:9.0.78]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:926) [tomcat-embed-core-9.0.78.jar:9.0.78]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1791) [tomcat-embed-core-9.0.78.jar:9.0.78]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) [tomcat-embed-core-9.0.78.jar:9.0.78]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) [tomcat-embed-core-9.0.78.jar:9.0.78]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) [tomcat-embed-core-9.0.78.jar:9.0.78]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.78.jar:9.0.78]
+	at java.lang.Thread.run(Thread.java:750) [na:1.8.0_362]
+
+2023-08-12 11:00:40.706 ERROR 12616 --- [http-nio-9090-exec-7] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception
+
+javax.imageio.IIOException: Can't read input file!
+	at javax.imageio.ImageIO.read(ImageIO.java:1302) ~[na:1.8.0_362]
+	at com.application.backend.services.impl.ArtworkServiceImpl.downloadArtworks(ArtworkServiceImpl.java:101) ~[classes/:na]
+	at com.application.backend.controller.ArtworksController.downloadArtworks(ArtworksController.java:55) ~[classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_362]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_362]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_362]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_362]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205) ~[spring-web-5.3.29.jar:5.3.29]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150) ~[spring-web-5.3.29.jar:5.3.29]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117) ~[spring-webmvc-5.3.29.jar:5.3.29]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895) ~[spring-webmvc-5.3.29.jar:5.3.29]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808) ~[spring-webmvc-5.3.29.jar:5.3.29]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.3.29.jar:5.3.29]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1072) ~[spring-webmvc-5.3.29.jar:5.3.29]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:965) ~[spring-webmvc-5.3.29.jar:5.3.29]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.29.jar:5.3.29]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) ~[spring-webmvc-5.3.29.jar:5.3.29]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:529) ~[tomcat-embed-core-9.0.78.jar:4.0.FR]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.29.jar:5.3.29]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:623) ~[tomcat-embed-core-9.0.78.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:209) ~[tomcat-embed-core-9.0.78.jar:9.0.78]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.78.jar:9.0.78]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-9.0.78.jar:9.0.78]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.78.jar:9.0.78]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.78.jar:9.0.78]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.29.jar:5.3.29]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.29.jar:5.3.29]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.78.jar:9.0.78]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.78.jar:9.0.78]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.3.29.jar:5.3.29]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.29.jar:5.3.29]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.78.jar:9.0.78]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.78.jar:9.0.78]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.3.29.jar:5.3.29]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.29.jar:5.3.29]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.78.jar:9.0.78]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.78.jar:9.0.78]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-9.0.78.jar:9.0.78]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) [tomcat-embed-core-9.0.78.jar:9.0.78]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:481) [tomcat-embed-core-9.0.78.jar:9.0.78]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130) [tomcat-embed-core-9.0.78.jar:9.0.78]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) [tomcat-embed-core-9.0.78.jar:9.0.78]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-9.0.78.jar:9.0.78]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [tomcat-embed-core-9.0.78.jar:9.0.78]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:390) [tomcat-embed-core-9.0.78.jar:9.0.78]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) [tomcat-embed-core-9.0.78.jar:9.0.78]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:926) [tomcat-embed-core-9.0.78.jar:9.0.78]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1791) [tomcat-embed-core-9.0.78.jar:9.0.78]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) [tomcat-embed-core-9.0.78.jar:9.0.78]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) [tomcat-embed-core-9.0.78.jar:9.0.78]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) [tomcat-embed-core-9.0.78.jar:9.0.78]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.78.jar:9.0.78]
+	at java.lang.Thread.run(Thread.java:750) [na:1.8.0_362]
+
+2023-08-12 11:03:28.724  INFO 12616 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2023-08-12 11:03:28.729  INFO 12616 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2023-08-12 11:03:35.175  INFO 20764 --- [restartedMain] c.a.backend.BackendApplication           : Starting BackendApplication using Java 1.8.0_362 on SSymbol-PC with PID 20764 (D:\桌面\SpringWeb\backend\target\classes started by SSymbol in D:\桌面\SpringWeb)
+2023-08-12 11:03:35.176  INFO 20764 --- [restartedMain] c.a.backend.BackendApplication           : No active profile set, falling back to 1 default profile: "default"
+2023-08-12 11:03:35.210  INFO 20764 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-08-12 11:03:35.211  INFO 20764 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-08-12 11:03:35.924  INFO 20764 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9090 (http)
+2023-08-12 11:03:35.931  INFO 20764 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-08-12 11:03:35.931  INFO 20764 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.78]
+2023-08-12 11:03:35.998  INFO 20764 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-08-12 11:03:35.999  INFO 20764 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 788 ms
+2023-08-12 11:03:36.104  INFO 20764 --- [restartedMain] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2023-08-12 11:03:36.179  INFO 20764 --- [restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2023-08-12 11:03:37.097  WARN 20764 --- [restartedMain] c.b.m.core.injector.DefaultSqlInjector   : class com.application.backend.entity.Artworks ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2023-08-12 11:03:37.387  WARN 20764 --- [restartedMain] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2023-08-12 11:03:37.450  INFO 20764 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-08-12 11:03:37.471  INFO 20764 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9090 (http) with context path ''
+2023-08-12 11:03:37.479  INFO 20764 --- [restartedMain] c.a.backend.BackendApplication           : Started BackendApplication in 2.599 seconds (JVM running for 3.54)
+2023-08-12 11:03:40.297  INFO 20764 --- [http-nio-9090-exec-3] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-08-12 11:03:40.298  INFO 20764 --- [http-nio-9090-exec-3] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-08-12 11:03:40.298  INFO 20764 --- [http-nio-9090-exec-3] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2023-08-12 11:03:42.367 ERROR 20764 --- [http-nio-9090-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception
+
+javax.imageio.IIOException: Invalid argument to native writeImage
+	at com.sun.imageio.plugins.jpeg.JPEGImageWriter.writeImage(Native Method) ~[na:1.8.0_362]
+	at com.sun.imageio.plugins.jpeg.JPEGImageWriter.writeOnThread(JPEGImageWriter.java:1067) ~[na:1.8.0_362]
+	at com.sun.imageio.plugins.jpeg.JPEGImageWriter.write(JPEGImageWriter.java:363) ~[na:1.8.0_362]
+	at javax.imageio.ImageWriter.write(ImageWriter.java:615) ~[na:1.8.0_362]
+	at javax.imageio.ImageIO.doWrite(ImageIO.java:1622) ~[na:1.8.0_362]
+	at javax.imageio.ImageIO.write(ImageIO.java:1588) ~[na:1.8.0_362]
+	at com.application.backend.services.impl.ArtworkServiceImpl.downloadArtworks(ArtworkServiceImpl.java:110) ~[classes/:na]
+	at com.application.backend.controller.ArtworksController.downloadArtworks(ArtworksController.java:55) ~[classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_362]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_362]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_362]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_362]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205) ~[spring-web-5.3.29.jar:5.3.29]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150) ~[spring-web-5.3.29.jar:5.3.29]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117) ~[spring-webmvc-5.3.29.jar:5.3.29]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895) ~[spring-webmvc-5.3.29.jar:5.3.29]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808) ~[spring-webmvc-5.3.29.jar:5.3.29]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.3.29.jar:5.3.29]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1072) ~[spring-webmvc-5.3.29.jar:5.3.29]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:965) ~[spring-webmvc-5.3.29.jar:5.3.29]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.29.jar:5.3.29]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) ~[spring-webmvc-5.3.29.jar:5.3.29]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:529) ~[tomcat-embed-core-9.0.78.jar:4.0.FR]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.29.jar:5.3.29]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:623) ~[tomcat-embed-core-9.0.78.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:209) ~[tomcat-embed-core-9.0.78.jar:9.0.78]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.78.jar:9.0.78]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-9.0.78.jar:9.0.78]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.78.jar:9.0.78]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.78.jar:9.0.78]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.29.jar:5.3.29]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.29.jar:5.3.29]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.78.jar:9.0.78]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.78.jar:9.0.78]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.3.29.jar:5.3.29]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.29.jar:5.3.29]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.78.jar:9.0.78]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.78.jar:9.0.78]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.3.29.jar:5.3.29]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.29.jar:5.3.29]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.78.jar:9.0.78]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.78.jar:9.0.78]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-9.0.78.jar:9.0.78]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) [tomcat-embed-core-9.0.78.jar:9.0.78]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:481) [tomcat-embed-core-9.0.78.jar:9.0.78]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130) [tomcat-embed-core-9.0.78.jar:9.0.78]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) [tomcat-embed-core-9.0.78.jar:9.0.78]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-9.0.78.jar:9.0.78]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [tomcat-embed-core-9.0.78.jar:9.0.78]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:390) [tomcat-embed-core-9.0.78.jar:9.0.78]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) [tomcat-embed-core-9.0.78.jar:9.0.78]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:926) [tomcat-embed-core-9.0.78.jar:9.0.78]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1791) [tomcat-embed-core-9.0.78.jar:9.0.78]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) [tomcat-embed-core-9.0.78.jar:9.0.78]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) [tomcat-embed-core-9.0.78.jar:9.0.78]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) [tomcat-embed-core-9.0.78.jar:9.0.78]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.78.jar:9.0.78]
+	at java.lang.Thread.run(Thread.java:750) [na:1.8.0_362]
+
+2023-08-12 11:04:59.993  INFO 20764 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2023-08-12 11:04:59.998  INFO 20764 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2023-08-12 11:05:05.304  INFO 5628 --- [restartedMain] c.a.backend.BackendApplication           : Starting BackendApplication using Java 1.8.0_362 on SSymbol-PC with PID 5628 (D:\桌面\SpringWeb\backend\target\classes started by SSymbol in D:\桌面\SpringWeb)
+2023-08-12 11:05:05.305  INFO 5628 --- [restartedMain] c.a.backend.BackendApplication           : No active profile set, falling back to 1 default profile: "default"
+2023-08-12 11:05:05.342  INFO 5628 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-08-12 11:05:05.343  INFO 5628 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-08-12 11:05:06.111  INFO 5628 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9090 (http)
+2023-08-12 11:05:06.117  INFO 5628 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-08-12 11:05:06.117  INFO 5628 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.78]
+2023-08-12 11:05:06.176  INFO 5628 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-08-12 11:05:06.176  INFO 5628 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 833 ms
+2023-08-12 11:05:06.264  INFO 5628 --- [restartedMain] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2023-08-12 11:05:06.317  INFO 5628 --- [restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2023-08-12 11:05:07.185  WARN 5628 --- [restartedMain] c.b.m.core.injector.DefaultSqlInjector   : class com.application.backend.entity.Artworks ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2023-08-12 11:05:07.453  WARN 5628 --- [restartedMain] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2023-08-12 11:05:07.514  INFO 5628 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-08-12 11:05:07.537  INFO 5628 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9090 (http) with context path ''
+2023-08-12 11:05:07.545  INFO 5628 --- [restartedMain] c.a.backend.BackendApplication           : Started BackendApplication in 2.519 seconds (JVM running for 3.409)
+2023-08-12 11:05:10.257  INFO 5628 --- [http-nio-9090-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-08-12 11:05:10.258  INFO 5628 --- [http-nio-9090-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-08-12 11:05:10.259  INFO 5628 --- [http-nio-9090-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-08-12 11:05:12.760 ERROR 5628 --- [http-nio-9090-exec-2] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception
+
+javax.imageio.IIOException: Invalid argument to native writeImage
+	at com.sun.imageio.plugins.jpeg.JPEGImageWriter.writeImage(Native Method) ~[na:1.8.0_362]
+	at com.sun.imageio.plugins.jpeg.JPEGImageWriter.writeOnThread(JPEGImageWriter.java:1067) ~[na:1.8.0_362]
+	at com.sun.imageio.plugins.jpeg.JPEGImageWriter.write(JPEGImageWriter.java:363) ~[na:1.8.0_362]
+	at javax.imageio.ImageWriter.write(ImageWriter.java:615) ~[na:1.8.0_362]
+	at javax.imageio.ImageIO.doWrite(ImageIO.java:1622) ~[na:1.8.0_362]
+	at javax.imageio.ImageIO.write(ImageIO.java:1588) ~[na:1.8.0_362]
+	at com.application.backend.services.impl.ArtworkServiceImpl.downloadArtworks(ArtworkServiceImpl.java:110) ~[classes/:na]
+	at com.application.backend.controller.ArtworksController.downloadArtworks(ArtworksController.java:55) ~[classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_362]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_362]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_362]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_362]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205) ~[spring-web-5.3.29.jar:5.3.29]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150) ~[spring-web-5.3.29.jar:5.3.29]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117) ~[spring-webmvc-5.3.29.jar:5.3.29]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895) ~[spring-webmvc-5.3.29.jar:5.3.29]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808) ~[spring-webmvc-5.3.29.jar:5.3.29]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.3.29.jar:5.3.29]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1072) ~[spring-webmvc-5.3.29.jar:5.3.29]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:965) ~[spring-webmvc-5.3.29.jar:5.3.29]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.29.jar:5.3.29]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) ~[spring-webmvc-5.3.29.jar:5.3.29]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:529) ~[tomcat-embed-core-9.0.78.jar:4.0.FR]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.29.jar:5.3.29]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:623) ~[tomcat-embed-core-9.0.78.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:209) ~[tomcat-embed-core-9.0.78.jar:9.0.78]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.78.jar:9.0.78]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-9.0.78.jar:9.0.78]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.78.jar:9.0.78]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.78.jar:9.0.78]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.29.jar:5.3.29]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.29.jar:5.3.29]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.78.jar:9.0.78]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.78.jar:9.0.78]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.3.29.jar:5.3.29]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.29.jar:5.3.29]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.78.jar:9.0.78]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.78.jar:9.0.78]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.3.29.jar:5.3.29]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.29.jar:5.3.29]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.78.jar:9.0.78]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.78.jar:9.0.78]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-9.0.78.jar:9.0.78]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) [tomcat-embed-core-9.0.78.jar:9.0.78]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:481) [tomcat-embed-core-9.0.78.jar:9.0.78]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130) [tomcat-embed-core-9.0.78.jar:9.0.78]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) [tomcat-embed-core-9.0.78.jar:9.0.78]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-9.0.78.jar:9.0.78]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [tomcat-embed-core-9.0.78.jar:9.0.78]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:390) [tomcat-embed-core-9.0.78.jar:9.0.78]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) [tomcat-embed-core-9.0.78.jar:9.0.78]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:926) [tomcat-embed-core-9.0.78.jar:9.0.78]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1791) [tomcat-embed-core-9.0.78.jar:9.0.78]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) [tomcat-embed-core-9.0.78.jar:9.0.78]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) [tomcat-embed-core-9.0.78.jar:9.0.78]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) [tomcat-embed-core-9.0.78.jar:9.0.78]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.78.jar:9.0.78]
+	at java.lang.Thread.run(Thread.java:750) [na:1.8.0_362]
+
+2023-08-12 11:06:54.462  INFO 5628 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2023-08-12 11:06:54.467  INFO 5628 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2023-08-12 11:06:59.807  INFO 17132 --- [restartedMain] c.a.backend.BackendApplication           : Starting BackendApplication using Java 1.8.0_362 on SSymbol-PC with PID 17132 (D:\桌面\SpringWeb\backend\target\classes started by SSymbol in D:\桌面\SpringWeb)
+2023-08-12 11:06:59.808  INFO 17132 --- [restartedMain] c.a.backend.BackendApplication           : No active profile set, falling back to 1 default profile: "default"
+2023-08-12 11:06:59.841  INFO 17132 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-08-12 11:06:59.841  INFO 17132 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-08-12 11:07:00.609  INFO 17132 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9090 (http)
+2023-08-12 11:07:00.615  INFO 17132 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-08-12 11:07:00.615  INFO 17132 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.78]
+2023-08-12 11:07:00.675  INFO 17132 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-08-12 11:07:00.675  INFO 17132 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 834 ms
+2023-08-12 11:07:00.764  INFO 17132 --- [restartedMain] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2023-08-12 11:07:00.820  INFO 17132 --- [restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2023-08-12 11:07:01.683  WARN 17132 --- [restartedMain] c.b.m.core.injector.DefaultSqlInjector   : class com.application.backend.entity.Artworks ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2023-08-12 11:07:01.948  WARN 17132 --- [restartedMain] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2023-08-12 11:07:02.010  INFO 17132 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-08-12 11:07:02.032  INFO 17132 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9090 (http) with context path ''
+2023-08-12 11:07:02.039  INFO 17132 --- [restartedMain] c.a.backend.BackendApplication           : Started BackendApplication in 2.511 seconds (JVM running for 3.401)
+2023-08-12 11:07:05.370  INFO 17132 --- [http-nio-9090-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-08-12 11:07:05.371  INFO 17132 --- [http-nio-9090-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-08-12 11:07:05.372  INFO 17132 --- [http-nio-9090-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-08-12 11:07:08.051 ERROR 17132 --- [http-nio-9090-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception
+
+javax.imageio.IIOException: Invalid argument to native writeImage
+	at com.sun.imageio.plugins.jpeg.JPEGImageWriter.writeImage(Native Method) ~[na:1.8.0_362]
+	at com.sun.imageio.plugins.jpeg.JPEGImageWriter.writeOnThread(JPEGImageWriter.java:1067) ~[na:1.8.0_362]
+	at com.sun.imageio.plugins.jpeg.JPEGImageWriter.write(JPEGImageWriter.java:363) ~[na:1.8.0_362]
+	at javax.imageio.ImageWriter.write(ImageWriter.java:615) ~[na:1.8.0_362]
+	at javax.imageio.ImageIO.doWrite(ImageIO.java:1622) ~[na:1.8.0_362]
+	at javax.imageio.ImageIO.write(ImageIO.java:1588) ~[na:1.8.0_362]
+	at com.application.backend.services.impl.ArtworkServiceImpl.downloadArtworks(ArtworkServiceImpl.java:111) ~[classes/:na]
+	at com.application.backend.controller.ArtworksController.downloadArtworks(ArtworksController.java:55) ~[classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_362]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_362]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_362]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_362]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205) ~[spring-web-5.3.29.jar:5.3.29]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150) ~[spring-web-5.3.29.jar:5.3.29]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117) ~[spring-webmvc-5.3.29.jar:5.3.29]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895) ~[spring-webmvc-5.3.29.jar:5.3.29]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808) ~[spring-webmvc-5.3.29.jar:5.3.29]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.3.29.jar:5.3.29]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1072) ~[spring-webmvc-5.3.29.jar:5.3.29]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:965) ~[spring-webmvc-5.3.29.jar:5.3.29]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.29.jar:5.3.29]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) ~[spring-webmvc-5.3.29.jar:5.3.29]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:529) ~[tomcat-embed-core-9.0.78.jar:4.0.FR]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.29.jar:5.3.29]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:623) ~[tomcat-embed-core-9.0.78.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:209) ~[tomcat-embed-core-9.0.78.jar:9.0.78]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.78.jar:9.0.78]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-9.0.78.jar:9.0.78]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.78.jar:9.0.78]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.78.jar:9.0.78]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.29.jar:5.3.29]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.29.jar:5.3.29]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.78.jar:9.0.78]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.78.jar:9.0.78]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.3.29.jar:5.3.29]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.29.jar:5.3.29]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.78.jar:9.0.78]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.78.jar:9.0.78]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.3.29.jar:5.3.29]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.29.jar:5.3.29]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.78.jar:9.0.78]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.78.jar:9.0.78]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-9.0.78.jar:9.0.78]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) [tomcat-embed-core-9.0.78.jar:9.0.78]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:481) [tomcat-embed-core-9.0.78.jar:9.0.78]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130) [tomcat-embed-core-9.0.78.jar:9.0.78]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) [tomcat-embed-core-9.0.78.jar:9.0.78]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-9.0.78.jar:9.0.78]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [tomcat-embed-core-9.0.78.jar:9.0.78]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:390) [tomcat-embed-core-9.0.78.jar:9.0.78]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) [tomcat-embed-core-9.0.78.jar:9.0.78]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:926) [tomcat-embed-core-9.0.78.jar:9.0.78]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1791) [tomcat-embed-core-9.0.78.jar:9.0.78]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) [tomcat-embed-core-9.0.78.jar:9.0.78]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) [tomcat-embed-core-9.0.78.jar:9.0.78]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) [tomcat-embed-core-9.0.78.jar:9.0.78]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.78.jar:9.0.78]
+	at java.lang.Thread.run(Thread.java:750) [na:1.8.0_362]
+
+2023-08-12 11:08:26.123  INFO 17132 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 1 deletion, 0 modifications)
+2023-08-12 11:08:26.542  INFO 17132 --- [Thread-10] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-08-12 11:08:26.543  INFO 17132 --- [Thread-10] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-08-12 11:08:26.548  INFO 17132 --- [Thread-10] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2023-08-12 11:08:26.553  INFO 17132 --- [Thread-10] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2023-08-12 11:08:26.658  INFO 17132 --- [restartedMain] c.a.backend.BackendApplication           : Starting BackendApplication using Java 1.8.0_362 on SSymbol-PC with PID 17132 (D:\桌面\SpringWeb\backend\target\classes started by SSymbol in D:\桌面\SpringWeb)
+2023-08-12 11:08:26.659  INFO 17132 --- [restartedMain] c.a.backend.BackendApplication           : No active profile set, falling back to 1 default profile: "default"
+2023-08-12 11:08:26.843  INFO 17132 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9090 (http)
+2023-08-12 11:08:26.843  INFO 17132 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-08-12 11:08:26.844  INFO 17132 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.78]
+2023-08-12 11:08:26.860  INFO 17132 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-08-12 11:08:26.860  INFO 17132 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 200 ms
+2023-08-12 11:08:26.877  INFO 17132 --- [restartedMain] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2023-08-12 11:08:26.883  INFO 17132 --- [restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-2} inited
+2023-08-12 11:08:27.429  WARN 17132 --- [restartedMain] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2023-08-12 11:08:27.448  INFO 17132 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-08-12 11:08:27.457  INFO 17132 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9090 (http) with context path ''
+2023-08-12 11:08:27.460  INFO 17132 --- [restartedMain] c.a.backend.BackendApplication           : Started BackendApplication in 0.826 seconds (JVM running for 88.821)
+2023-08-12 11:08:27.462  INFO 17132 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2023-08-12 11:08:28.878  INFO 17132 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (1 addition, 0 deletions, 0 modifications)
+2023-08-12 11:08:29.283  INFO 17132 --- [Thread-17] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-08-12 11:08:29.289  INFO 17132 --- [Thread-17] com.alibaba.druid.pool.DruidDataSource   : {dataSource-2} closing ...
+2023-08-12 11:08:29.289  INFO 17132 --- [Thread-17] com.alibaba.druid.pool.DruidDataSource   : {dataSource-2} closed
+2023-08-12 11:08:29.383  INFO 17132 --- [restartedMain] c.a.backend.BackendApplication           : Starting BackendApplication using Java 1.8.0_362 on SSymbol-PC with PID 17132 (D:\桌面\SpringWeb\backend\target\classes started by SSymbol in D:\桌面\SpringWeb)
+2023-08-12 11:08:29.383  INFO 17132 --- [restartedMain] c.a.backend.BackendApplication           : No active profile set, falling back to 1 default profile: "default"
+2023-08-12 11:08:29.525  INFO 17132 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9090 (http)
+2023-08-12 11:08:29.525  INFO 17132 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-08-12 11:08:29.525  INFO 17132 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.78]
+2023-08-12 11:08:29.539  INFO 17132 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-08-12 11:08:29.539  INFO 17132 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 154 ms
+2023-08-12 11:08:29.553  INFO 17132 --- [restartedMain] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2023-08-12 11:08:29.559  INFO 17132 --- [restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-3} inited
+2023-08-12 11:08:30.023  WARN 17132 --- [restartedMain] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2023-08-12 11:08:30.037  INFO 17132 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-08-12 11:08:30.044  INFO 17132 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9090 (http) with context path ''
+2023-08-12 11:08:30.047  INFO 17132 --- [restartedMain] c.a.backend.BackendApplication           : Started BackendApplication in 0.684 seconds (JVM running for 91.408)
+2023-08-12 11:08:30.048  INFO 17132 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2023-08-12 11:12:13.838  INFO 17132 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 1 deletion, 0 modifications)
+2023-08-12 11:12:14.263  INFO 17132 --- [Thread-21] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-08-12 11:12:14.268  INFO 17132 --- [Thread-21] com.alibaba.druid.pool.DruidDataSource   : {dataSource-3} closing ...
+2023-08-12 11:12:14.268  INFO 17132 --- [Thread-21] com.alibaba.druid.pool.DruidDataSource   : {dataSource-3} closed
+2023-08-12 11:12:14.374  INFO 17132 --- [restartedMain] c.a.backend.BackendApplication           : Starting BackendApplication using Java 1.8.0_362 on SSymbol-PC with PID 17132 (D:\桌面\SpringWeb\backend\target\classes started by SSymbol in D:\桌面\SpringWeb)
+2023-08-12 11:12:14.374  INFO 17132 --- [restartedMain] c.a.backend.BackendApplication           : No active profile set, falling back to 1 default profile: "default"
+2023-08-12 11:12:14.536  INFO 17132 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9090 (http)
+2023-08-12 11:12:14.537  INFO 17132 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-08-12 11:12:14.537  INFO 17132 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.78]
+2023-08-12 11:12:14.552  INFO 17132 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-08-12 11:12:14.552  INFO 17132 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 177 ms
+2023-08-12 11:12:14.561  WARN 17132 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'artworksController': Unsatisfied dependency expressed through field 'artworkServices'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.application.backend.services.ArtworkServices' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2023-08-12 11:12:14.562  INFO 17132 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-08-12 11:12:14.566  INFO 17132 --- [restartedMain] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2023-08-12 11:12:14.582 ERROR 17132 --- [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field artworkServices in com.application.backend.controller.ArtworksController required a bean of type 'com.application.backend.services.ArtworkServices' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'com.application.backend.services.ArtworkServices' in your configuration.
+
+2023-08-12 11:12:17.066  INFO 17132 --- [restartedMain] c.a.backend.BackendApplication           : Starting BackendApplication using Java 1.8.0_362 on SSymbol-PC with PID 17132 (D:\桌面\SpringWeb\backend\target\classes started by SSymbol in D:\桌面\SpringWeb)
+2023-08-12 11:12:17.066  INFO 17132 --- [restartedMain] c.a.backend.BackendApplication           : No active profile set, falling back to 1 default profile: "default"
+2023-08-12 11:12:17.206  INFO 17132 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9090 (http)
+2023-08-12 11:12:17.206  INFO 17132 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-08-12 11:12:17.206  INFO 17132 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.78]
+2023-08-12 11:12:17.221  INFO 17132 --- [restartedMain] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2023-08-12 11:12:17.221  INFO 17132 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 154 ms
+2023-08-12 11:12:17.236  INFO 17132 --- [restartedMain] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2023-08-12 11:12:17.243  INFO 17132 --- [restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-4} inited
+2023-08-12 11:12:17.742  WARN 17132 --- [restartedMain] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2023-08-12 11:12:17.758  INFO 17132 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-08-12 11:12:17.766  INFO 17132 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9090 (http) with context path ''
+2023-08-12 11:12:17.769  INFO 17132 --- [restartedMain] c.a.backend.BackendApplication           : Started BackendApplication in 0.72 seconds (JVM running for 319.13)
+2023-08-12 11:12:17.770  INFO 17132 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2023-08-12 11:14:58.707  INFO 17132 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-4} closing ...
+2023-08-12 11:14:58.708  INFO 17132 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-4} closed
+2023-08-12 11:15:04.097  INFO 18708 --- [restartedMain] c.a.backend.BackendApplication           : Starting BackendApplication using Java 1.8.0_362 on SSymbol-PC with PID 18708 (D:\桌面\SpringWeb\backend\target\classes started by SSymbol in D:\桌面\SpringWeb)
+2023-08-12 11:15:04.098  INFO 18708 --- [restartedMain] c.a.backend.BackendApplication           : No active profile set, falling back to 1 default profile: "default"
+2023-08-12 11:15:04.131  INFO 18708 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-08-12 11:15:04.131  INFO 18708 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-08-12 11:15:04.840  INFO 18708 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9090 (http)
+2023-08-12 11:15:04.845  INFO 18708 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-08-12 11:15:04.845  INFO 18708 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.78]
+2023-08-12 11:15:04.903  INFO 18708 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-08-12 11:15:04.904  INFO 18708 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 773 ms
+2023-08-12 11:15:04.993  INFO 18708 --- [restartedMain] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2023-08-12 11:15:05.047  INFO 18708 --- [restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2023-08-12 11:15:05.932  WARN 18708 --- [restartedMain] c.b.m.core.injector.DefaultSqlInjector   : class com.application.backend.entity.Artworks ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2023-08-12 11:15:06.224  WARN 18708 --- [restartedMain] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2023-08-12 11:15:06.296  INFO 18708 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-08-12 11:15:06.322  INFO 18708 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9090 (http) with context path ''
+2023-08-12 11:15:06.330  INFO 18708 --- [restartedMain] c.a.backend.BackendApplication           : Started BackendApplication in 2.498 seconds (JVM running for 3.387)
+2023-08-12 11:15:10.101  INFO 18708 --- [http-nio-9090-exec-3] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-08-12 11:15:10.102  INFO 18708 --- [http-nio-9090-exec-3] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-08-12 11:15:10.103  INFO 18708 --- [http-nio-9090-exec-3] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-08-12 11:15:41.400  INFO 18708 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 1 deletion, 0 modifications)
+2023-08-12 11:15:41.864  INFO 18708 --- [Thread-10] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-08-12 11:15:41.865  INFO 18708 --- [Thread-10] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-08-12 11:15:41.870  INFO 18708 --- [Thread-10] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2023-08-12 11:15:41.875  INFO 18708 --- [Thread-10] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2023-08-12 11:15:41.995  INFO 18708 --- [restartedMain] c.a.backend.BackendApplication           : Starting BackendApplication using Java 1.8.0_362 on SSymbol-PC with PID 18708 (D:\桌面\SpringWeb\backend\target\classes started by SSymbol in D:\桌面\SpringWeb)
+2023-08-12 11:15:41.996  INFO 18708 --- [restartedMain] c.a.backend.BackendApplication           : No active profile set, falling back to 1 default profile: "default"
+2023-08-12 11:15:42.178  INFO 18708 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9090 (http)
+2023-08-12 11:15:42.179  INFO 18708 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-08-12 11:15:42.179  INFO 18708 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.78]
+2023-08-12 11:15:42.196  INFO 18708 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-08-12 11:15:42.197  INFO 18708 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 200 ms
+2023-08-12 11:15:42.206  WARN 18708 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'artworksController' defined in file [D:\桌面\SpringWeb\backend\target\classes\com\application\backend\controller\ArtworksController.class]: Instantiation of bean failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.application.backend.controller.ArtworksController]: Constructor threw exception; nested exception is java.lang.NoClassDefFoundError: com/application/backend/services/impl/ArtworkServiceImpl
+2023-08-12 11:15:42.207  INFO 18708 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-08-12 11:15:42.212  INFO 18708 --- [restartedMain] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2023-08-12 11:15:42.233 ERROR 18708 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'artworksController' defined in file [D:\桌面\SpringWeb\backend\target\classes\com\application\backend\controller\ArtworksController.class]: Instantiation of bean failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.application.backend.controller.ArtworksController]: Constructor threw exception; nested exception is java.lang.NoClassDefFoundError: com/application/backend/services/impl/ArtworkServiceImpl
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateBean(AbstractAutowireCapableBeanFactory.java:1334) ~[spring-beans-5.3.29.jar:5.3.29]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1232) ~[spring-beans-5.3.29.jar:5.3.29]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582) ~[spring-beans-5.3.29.jar:5.3.29]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-5.3.29.jar:5.3.29]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.29.jar:5.3.29]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.29.jar:5.3.29]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.29.jar:5.3.29]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.29.jar:5.3.29]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:955) ~[spring-beans-5.3.29.jar:5.3.29]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:921) ~[spring-context-5.3.29.jar:5.3.29]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583) ~[spring-context-5.3.29.jar:5.3.29]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147) ~[spring-boot-2.7.14.jar:2.7.14]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:731) [spring-boot-2.7.14.jar:2.7.14]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408) [spring-boot-2.7.14.jar:2.7.14]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307) [spring-boot-2.7.14.jar:2.7.14]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1303) [spring-boot-2.7.14.jar:2.7.14]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1292) [spring-boot-2.7.14.jar:2.7.14]
+	at com.application.backend.BackendApplication.main(BackendApplication.java:11) [classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_362]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_362]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_362]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_362]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) [spring-boot-devtools-2.7.14.jar:2.7.14]
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.application.backend.controller.ArtworksController]: Constructor threw exception; nested exception is java.lang.NoClassDefFoundError: com/application/backend/services/impl/ArtworkServiceImpl
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:224) ~[spring-beans-5.3.29.jar:5.3.29]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:87) ~[spring-beans-5.3.29.jar:5.3.29]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateBean(AbstractAutowireCapableBeanFactory.java:1326) ~[spring-beans-5.3.29.jar:5.3.29]
+	... 22 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: com/application/backend/services/impl/ArtworkServiceImpl
+	at com.application.backend.controller.ArtworksController.<init>(ArtworksController.java:22) ~[classes/:na]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[na:1.8.0_362]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62) ~[na:1.8.0_362]
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:1.8.0_362]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423) ~[na:1.8.0_362]
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:211) ~[spring-beans-5.3.29.jar:5.3.29]
+	... 24 common frames omitted
+Caused by: java.lang.ClassNotFoundException: com.application.backend.services.impl.ArtworkServiceImpl
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:387) ~[na:1.8.0_362]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:418) ~[na:1.8.0_362]
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:352) ~[na:1.8.0_362]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:351) ~[na:1.8.0_362]
+	at java.lang.Class.forName0(Native Method) ~[na:1.8.0_362]
+	at java.lang.Class.forName(Class.java:348) ~[na:1.8.0_362]
+	at org.springframework.boot.devtools.restart.classloader.RestartClassLoader.loadClass(RestartClassLoader.java:145) ~[spring-boot-devtools-2.7.14.jar:2.7.14]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:351) ~[na:1.8.0_362]
+	... 30 common frames omitted
+
+2023-08-12 11:15:44.710  INFO 18708 --- [restartedMain] c.a.backend.BackendApplication           : Starting BackendApplication using Java 1.8.0_362 on SSymbol-PC with PID 18708 (D:\桌面\SpringWeb\backend\target\classes started by SSymbol in D:\桌面\SpringWeb)
+2023-08-12 11:15:44.711  INFO 18708 --- [restartedMain] c.a.backend.BackendApplication           : No active profile set, falling back to 1 default profile: "default"
+2023-08-12 11:15:44.854  INFO 18708 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9090 (http)
+2023-08-12 11:15:44.854  INFO 18708 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-08-12 11:15:44.854  INFO 18708 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.78]
+2023-08-12 11:15:44.869  INFO 18708 --- [restartedMain] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2023-08-12 11:15:44.869  INFO 18708 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 157 ms
+2023-08-12 11:15:44.885  INFO 18708 --- [restartedMain] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2023-08-12 11:15:44.890  INFO 18708 --- [restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-2} inited
+2023-08-12 11:15:45.390  WARN 18708 --- [restartedMain] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2023-08-12 11:15:45.406  INFO 18708 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-08-12 11:15:45.414  INFO 18708 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9090 (http) with context path ''
+2023-08-12 11:15:45.417  INFO 18708 --- [restartedMain] c.a.backend.BackendApplication           : Started BackendApplication in 0.728 seconds (JVM running for 42.473)
+2023-08-12 11:15:45.418  INFO 18708 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2023-08-12 11:16:20.880  INFO 18708 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-2} closing ...
+2023-08-12 11:16:20.881  INFO 18708 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-2} closed
+2023-08-12 11:16:26.236  INFO 22200 --- [restartedMain] c.a.backend.BackendApplication           : Starting BackendApplication using Java 1.8.0_362 on SSymbol-PC with PID 22200 (D:\桌面\SpringWeb\backend\target\classes started by SSymbol in D:\桌面\SpringWeb)
+2023-08-12 11:16:26.237  INFO 22200 --- [restartedMain] c.a.backend.BackendApplication           : No active profile set, falling back to 1 default profile: "default"
+2023-08-12 11:16:26.272  INFO 22200 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-08-12 11:16:26.273  INFO 22200 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-08-12 11:16:27.007  INFO 22200 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9090 (http)
+2023-08-12 11:16:27.013  INFO 22200 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-08-12 11:16:27.013  INFO 22200 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.78]
+2023-08-12 11:16:27.073  INFO 22200 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-08-12 11:16:27.073  INFO 22200 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 800 ms
+2023-08-12 11:16:27.158  INFO 22200 --- [restartedMain] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2023-08-12 11:16:27.214  INFO 22200 --- [restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2023-08-12 11:16:28.077  WARN 22200 --- [restartedMain] c.b.m.core.injector.DefaultSqlInjector   : class com.application.backend.entity.Artworks ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2023-08-12 11:16:28.337  WARN 22200 --- [restartedMain] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2023-08-12 11:16:28.406  INFO 22200 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-08-12 11:16:28.430  INFO 22200 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9090 (http) with context path ''
+2023-08-12 11:16:28.437  INFO 22200 --- [restartedMain] c.a.backend.BackendApplication           : Started BackendApplication in 2.486 seconds (JVM running for 3.41)
+2023-08-12 11:16:30.204  INFO 22200 --- [http-nio-9090-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-08-12 11:16:30.205  INFO 22200 --- [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-08-12 11:16:30.206  INFO 22200 --- [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2023-08-12 13:15:53.376  INFO 22200 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2023-08-12 13:15:53.380  INFO 22200 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
