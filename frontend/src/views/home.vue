@@ -13,7 +13,7 @@
             </el-menu-item>
             <el-menu-item>
               <el-input placeholder="请输入搜索内容" v-model="searchBar" class="input-with-select" style="width: 350px">
-                <el-button slot="append" icon="el-icon-search"></el-button>
+                <el-button slot="append" icon="el-icon-search" @click="toSearch()"></el-button>
               </el-input>
             </el-menu-item>
             <el-submenu index="1">
@@ -107,6 +107,23 @@ export default {
     },
     toSubmit(){
       this.$router.push('/submit')
+    },
+    toSearch(){
+      if (this.searchBar.length===0){
+        this.$router.push("/searchHome").catch((error)=>{
+          console.log(error)})
+      }else {
+        this.$router.push({
+          path:'/search',
+          query:{
+            searcher:this.searchBar
+          }
+        }).then().catch((err)=>{
+          console.log(err)
+        }).catch((error)=>{
+          console.log(error)
+        })
+      }
     }
   }
 }

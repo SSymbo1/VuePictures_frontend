@@ -312,7 +312,6 @@ el-main{
 .hot-card{
   flex: 1 0 35%;
   height: 310px;
-  background-color: #f5f5f5
 }
 .user-follow-update-card{
   flex: 1 0 30%;

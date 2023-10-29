@@ -1,6 +1,7 @@
 <template>
   <el-container>
     <el-header height="250px">
+      <el-page-header @back="goBack" :content="user.nickname" style="margin-bottom: 5px"></el-page-header>
       <div style="height: 250px;position: relative">
         <el-image
             style="width: 100%;height: 100%"
@@ -42,8 +43,6 @@
           </div>
         </div>
       </div>
-    </el-main>
-    <el-footer>
       <div>
         <el-menu
             mode="horizontal"
@@ -88,6 +87,8 @@
           </el-card>
         </div>
       </div>
+    </el-main>
+    <el-footer>
     </el-footer>
     <el-dialog
         :title="dialogTitle"
@@ -493,7 +494,10 @@ export default {
     hideLoading(){
       this.loading = false
       Loading.service().close()
-    }
+    },
+    goBack(){
+      this.$router.back()
+    },
   }
 }
 </script>
