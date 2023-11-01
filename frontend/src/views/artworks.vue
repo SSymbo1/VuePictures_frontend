@@ -113,6 +113,9 @@ export default {
             })
           })
         })
+      }).catch((error)=>{
+        this.$router.push({name:'404page'})
+        this.hideLoading()
       })
     })
   },

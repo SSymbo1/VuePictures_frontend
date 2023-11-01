@@ -5,9 +5,9 @@
       <el-header>
         <el-menu
             mode="horizontal"
-            default-active="0">
-          <el-menu-item index="0" @click="switchMode=true">插画</el-menu-item>
-          <el-menu-item index="1" @click="switchMode=false">用户</el-menu-item>
+            :default-active="selectCon">
+          <el-menu-item index="0" @click="toArtwork()">插画</el-menu-item>
+          <el-menu-item index="1" @click="toSearchUser()">用户</el-menu-item>
         </el-menu>
       </el-header>
       <el-main>
@@ -113,6 +113,10 @@ import axios from "axios";
 import {Loading} from "element-ui";
 
 export default {
+  mounted() {
+    this.searchWhat=this.$route.query.use
+    this.mode()
+  },
   created() {
     this.showLoading()
     this.getUser()
@@ -122,6 +126,8 @@ export default {
   },
   data(){
     return{
+      selectCon:'0',
+      searchWhat:'',
       searcher:'',
       pageArtworks:1,
       pageUser:1,
@@ -147,6 +153,9 @@ export default {
         this.maxPageUser=resp.data.pages;
         this.userinfo=resp.data.records;
         console.log(this.userinfo)
+      }).catch((err)=>{
+        this.$router.push({name:'404page'})
+        this.hideLoading()
       })
     },
     getArtworks(){
@@ -162,6 +171,9 @@ export default {
         this.maxPageArtworks=resp.data.pages;
         this.imgs=resp.data.records;
         this.hideLoading()
+      }).catch((err)=>{
+        this.$router.push({name:'404page'})
+        this.hideLoading()
       })
     },
     getFollowed(){
@@ -173,6 +185,9 @@ export default {
         }
       }).then((resp)=>{
         this.follow=resp.data;
+      }).catch((err)=>{
+        this.$router.push({name:'404page'})
+        this.hideLoading()
       })
     },
     getLoginUser(){
@@ -184,6 +199,42 @@ export default {
         }
       }).then((resp)=>{
         this.loginUsr=resp.data
+      })
+    },
+    mode(){
+      if (this.searchWhat==='user'){
+        this.switchMode=false
+        this.selectCon='1'
+      }
+      if (this.searchWhat==='artwork'){
+        this.switchMode=true
+        this.selectCon='0'
+      }
+    },
+    toArtwork(){
+      this.$router.push({
+        path:'/search',
+        query:{
+          searcher:this.$route.query.searcher,
+          use:'artwork'
+        }
+      }).then().catch((err)=>{
+        console.log(err)
+      }).catch((error)=>{
+        console.log(error)
+      })
+    },
+    toSearchUser(){
+      this.$router.push({
+        path:'/search',
+        query:{
+          searcher:this.$route.query.searcher,
+          use:'user'
+        }
+      }).then().catch((err)=>{
+        console.log(err)
+      }).catch((error)=>{
+        console.log(error)
       })
     },
     handleCurrentChangeArtworks(page){
@@ -269,8 +320,8 @@ export default {
           method: 'get',
           url: 'api/follow',
           params: {
-            uid:this.loginUsr[0].iid,
-            fan:fan
+            uid: fan,
+            fan: this.loginUsr[0].iid
           }
         }).then((resp)=>{
           if (resp.data===true){
@@ -288,8 +339,8 @@ export default {
             method: 'get',
             url: 'api/follow',
             params: {
-              uid:this.loginUsr[0].iid,
-              fan:fan
+              uid: fan,
+              fan: this.loginUsr[0].iid
             }
           }).then((resp)=>{
             if (resp.data===true){

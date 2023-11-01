@@ -13,6 +13,7 @@ import artworks from "@/views/artworks.vue";
 import submit from "@/views/submit.vue";
 import search from "@/views/search.vue";
 import searchhome from "@/views/searchhome.vue";
+import history from "@/views/history.vue";
 
 Vue.use(VueRouter)
 NProgress.configure({showSpinner: false})
@@ -67,13 +68,16 @@ const router=new VueRouter({
                 {
                     path:'/searchHome',
                     component:searchhome
+                },
+                {
+                    path:'/history',
+                    component:history
                 }
             ]
         }
     ],
     mode:"history"
 })
-
 router.beforeEach((to, from, next) => {
     NProgress.start();
     const token = localStorage.getItem('token');
@@ -96,5 +100,12 @@ router.beforeEach((to, from, next) => {
         NProgress.done();
     }
 });
+
+const originalPush = VueRouter.prototype.push
+VueRouter.prototype.push = function push(location, onResolve, onReject) {
+    if (onResolve || onReject) return originalPush.call(this, location, onResolve, onReject)
+    return originalPush.call(this, location).catch(err => err)
+}
+
 
 export default router

@@ -260,8 +260,15 @@ export default {
             this.followButton='取消关注'
           }
           this.hideLoading()
+        }).catch((error)=>{
+          console.log(error)
         })
+      }).catch((error)=>{
+        console.log(error)
       })
+    }).catch((err)=>{
+      this.$router.push({name:'404page'})
+      this.hideLoading()
     })
   },
   methods:{
@@ -324,6 +331,9 @@ export default {
       if (this.userForm.sex==='none'){
         this.userForm.sex='none'
       }
+      if (this.userForm.self.length<=0){
+        this.userForm.self='这个人很懒，没有个人简介哦'
+      }
       this.$refs.userForm.validate((validate)=>{
         if (validate){
           axios({
@@ -347,6 +357,8 @@ export default {
             else {
               this.$message.error("修改个人资料失败！")
             }
+          }).catch((error)=>{
+            console.log(error)
           })
         }
         else {

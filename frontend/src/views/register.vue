@@ -24,6 +24,13 @@
           <el-form-item prop="rpwd">
             <el-input v-model="ruleForm.rpwd" placeholder="请再次输入密码" prefix-icon="el-icon-lock" show-password></el-input>
           </el-form-item>
+          <el-form-item prop="email">
+            <el-input v-model="ruleForm.email" placeholder="请输入邮箱地址" prefix-icon="el-icon-message" style="width: 200px;float: left"></el-input>
+          </el-form-item>
+          <el-button type="primary" round @click="getCaptcha" :disabled="disable" style="float: none;position: relative;top: -63px;left: 100px;width: 117px;height: 39px">{{btn}}</el-button>
+          <el-form-item prop="captcha">
+            <el-input v-model="ruleForm.captcha" placeholder="请输入验证码" prefix-icon="el-icon-link"></el-input>
+          </el-form-item>
           <el-form-item>
             <el-button type="primary" round @click="submitForm" style="width:100%;margin-bottom:15px;">注册</el-button>
           </el-form-item>
@@ -55,10 +62,17 @@ export default {
       ],
       // 当前显示的背景图片的索引
       currentIndex: 0,
+      btn:'发送验证码',
+      code:'',
+      key:'',
+      time:60,
+      disable:false,
       ruleForm:{
         usr:"",
         pwd:"",
-        rpwd:""
+        rpwd:"",
+        email:"",
+        captcha:"",
       },
       rules:{
         usr: [
@@ -72,6 +86,13 @@ export default {
         rpwd: [
           { required: true, message: '再次输入密码不得为空！', trigger: 'blur' },
           { validator: this.validateConfirmPassword, trigger: 'blur'}
+        ],
+        email:[
+          { required: true, message: '邮箱地址不能为空', trigger: 'blur'},
+          { validator: this.validateConfirmEmail, trigger: 'blur'}
+        ],
+        captcha: [
+          { required:true, message: '验证码不能为空！', trigger: 'blur'}
         ]
       },
     };
@@ -93,6 +114,67 @@ export default {
         callback()
       }
     },
+    validateConfirmEmail(rule, value, callback){
+      if (!value){
+        callback()
+      }
+      else {
+        const email=/^[a-z0-9]+([._\\-]*[a-z0-9])*@([a-z0-9]+[-a-z0-9]*[a-z0-9]+.){1,63}[a-z0-9]+$/.test(value)
+        if (!email){
+          callback(new Error("请输入正确的邮箱格式！"))
+        }
+        else {
+          callback()
+        }
+      }
+    },
+    getCaptcha(){
+      this.disable = true; // 禁用按钮
+      let timer = setInterval(() => {
+        if (this.time > 0) {
+          this.time--;
+          this.btn=this.time+"s"
+        } else {
+          clearInterval(timer);
+          this.btn="发送验证码"
+          this.disable = false; // 启用按钮
+          this.time = 60; // 重置倒计时时间
+        }
+      }, 1000);
+      const rule=/^[a-z0-9]+([._\\-]*[a-z0-9])*@([a-z0-9]+[-a-z0-9]*[a-z0-9]+.){1,63}[a-z0-9]+$/
+      if (rule.test(this.ruleForm.email)&&this.ruleForm.email!==''){
+        this.$message({
+          showClose:true,
+          message:"验证码已发送!",
+          type:'success'
+        })
+        axios({
+          method:"get",
+          url:'api/mail',
+          params:{
+            email:this.ruleForm.email
+          }
+        }).then((resp)=>{
+          if (resp.data.code===1444){
+            this.key=resp.data.data.captcha
+          }
+          else if(resp.data.code===1443){
+            this.$message({
+              showClose:true,
+              message:"验证码发送失败!",
+              type:'error'
+            })
+          }
+        })
+      }
+      else {
+        this.$message({
+          showClose: true,
+          message:"请输入正确的邮箱!",
+          type:'error'
+        })
+      }
+    },
     submitForm() {
       this.$refs.ruleForm.validate((valid)=>{
         if (valid){
@@ -101,7 +183,10 @@ export default {
             url:"api/register",
             data:{
               username:this.ruleForm.usr,
-              password:this.ruleForm.pwd
+              password:this.ruleForm.pwd,
+              email:this.ruleForm.email,
+              captcha:this.ruleForm.captcha,
+              code:this.key
             }
           }).then((resp)=>{
             if (resp.data.code===2222){
@@ -116,6 +201,13 @@ export default {
               this.$message({
                 showClose:true,
                 message:"该用户已存在!",
+                type:'error'
+              })
+            }
+            else if(resp.data.code===2223){
+              this.$message({
+                showClose:true,
+                message:"验证码错误!",
                 type:'error'
               })
             }

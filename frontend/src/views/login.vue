@@ -111,6 +111,12 @@ export default {
                 type:'error'
               })
             }
+          }).catch((error)=>{
+            this.$message({
+              showClose:true,
+              message:"网络错误，请检查网络或联系作者！",
+              type:'error'
+            })
           })
         }
         else{

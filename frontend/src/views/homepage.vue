@@ -302,8 +302,8 @@ el-main{
   padding-top: 20px;
 }
 .user-card-self-info{
+  margin: 20px;
   text-align: center;
-  padding-top: 20px;
 }
 .user-card-follow{
   text-align: center;

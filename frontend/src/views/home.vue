@@ -9,7 +9,7 @@
               mode="horizontal"
               @select="handleSelect">
             <el-menu-item index="0">
-              <span class="logo" @click="$router.push('/home')">VuePictures</span>
+              <span class="logo" @click="toHome()">VuePictures</span>
             </el-menu-item>
             <el-menu-item>
               <el-input placeholder="请输入搜索内容" v-model="searchBar" class="input-with-select" style="width: 350px">
@@ -22,12 +22,12 @@
               <el-menu-item index="1-2">选项2</el-menu-item>
               <el-menu-item index="1-3">选项3</el-menu-item>
             </el-submenu>
-            <el-menu-item index="2">选项占位符</el-menu-item>
+            <el-menu-item index="2">动态</el-menu-item>
             <el-menu-item index="3" @click="toSubmit">投稿</el-menu-item>
             <el-submenu index="4">
               <template slot="title"><el-avatar :size="50" :src="circleUrl"></el-avatar></template>
               <el-menu-item index="4-1" @click="toUserInfo()">个人资料</el-menu-item>
-              <el-menu-item index="4-2">选项2</el-menu-item>
+              <el-menu-item index="4-2">历史</el-menu-item>
               <el-menu-item index="4-3" @click="exit">退出登录</el-menu-item>
             </el-submenu>
           </el-menu>
@@ -96,6 +96,7 @@ export default {
       })
     },
     toUserInfo(){
+      this.searchBar=''
       this.$router.push({
         path:'/user',
         query:{
@@ -106,6 +107,7 @@ export default {
       })
     },
     toSubmit(){
+      this.searchBar=''
       this.$router.push('/submit')
     },
     toSearch(){
@@ -116,7 +118,8 @@ export default {
         this.$router.push({
           path:'/search',
           query:{
-            searcher:this.searchBar
+            searcher:this.searchBar,
+            use:'artwork'
           }
         }).then().catch((err)=>{
           console.log(err)
@@ -124,6 +127,10 @@ export default {
           console.log(error)
         })
       }
+    },
+    toHome(){
+      this.searchBar=''
+      this.$router.push("/home")
     }
   }
 }
