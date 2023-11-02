@@ -6,9 +6,8 @@
           <el-menu
               :default-active="activeIndex"
               class="el-menu-demo"
-              mode="horizontal"
-              @select="handleSelect">
-            <el-menu-item index="0">
+              mode="horizontal">
+            <el-menu-item>
               <span class="logo" @click="toHome()">VuePictures</span>
             </el-menu-item>
             <el-menu-item>
@@ -16,19 +15,19 @@
                 <el-button slot="append" icon="el-icon-search" @click="toSearch()"></el-button>
               </el-input>
             </el-menu-item>
-            <el-submenu index="1">
+            <el-submenu index="0">
               <template slot="title">选项占位符</template>
-              <el-menu-item index="1-1">选项1</el-menu-item>
-              <el-menu-item index="1-2">选项2</el-menu-item>
-              <el-menu-item index="1-3">选项3</el-menu-item>
+              <el-menu-item index="0-1">选项1</el-menu-item>
+              <el-menu-item index="0-2">选项2</el-menu-item>
+              <el-menu-item index="0-3">选项3</el-menu-item>
             </el-submenu>
-            <el-menu-item index="2">动态</el-menu-item>
-            <el-menu-item index="3" @click="toSubmit">投稿</el-menu-item>
-            <el-submenu index="4">
+            <el-menu-item index="1">动态</el-menu-item>
+            <el-menu-item index="2" @click="toSubmit">创作中心</el-menu-item>
+            <el-submenu index="3">
               <template slot="title"><el-avatar :size="50" :src="circleUrl"></el-avatar></template>
-              <el-menu-item index="4-1" @click="toUserInfo()">个人资料</el-menu-item>
-              <el-menu-item index="4-2">历史</el-menu-item>
-              <el-menu-item index="4-3" @click="exit">退出登录</el-menu-item>
+              <el-menu-item index="3-1" @click="toUserInfo()">个人资料</el-menu-item>
+              <el-menu-item index="3-2" @click="toHistory()">历史</el-menu-item>
+              <el-menu-item index="3-3" @click="exit">退出登录</el-menu-item>
             </el-submenu>
           </el-menu>
         </el-header>
@@ -59,6 +58,7 @@ export default {
     };
   },
   mounted() {
+    //获取当前登录用户信息
     axios({
       method:'get',
       url:'/api/user_info',
@@ -71,15 +71,15 @@ export default {
     })
   },
   destroyed() {
+    //移除滚动条监听器
     window.removeEventListener("scroll",this.rolling)
   },
   beforeDestroy() {
+    //移除滚动条监听器
     window.removeEventListener("scroll",this.rolling)
   },
   methods: {
-    handleSelect(key, keyPath) {
-      console.log(key, keyPath);
-    },
+    //退出登录（注销）
     exit(){
       this.$confirm("是否退出登录？","退出",{
         confirmButtonText:'退出',
@@ -95,6 +95,7 @@ export default {
       }).catch(()=>{
       })
     },
+    //跳转个人资料
     toUserInfo(){
       this.searchBar=''
       this.$router.push({
@@ -106,14 +107,23 @@ export default {
         console.log(err)
       })
     },
+    //跳转历史记录
+    toHistory(){
+      this.$router.push({
+        path:'/history'
+      })
+    },
+    //跳转投稿
     toSubmit(){
       this.searchBar=''
       this.$router.push('/submit')
     },
+    //跳转搜索
     toSearch(){
       if (this.searchBar.length===0){
         this.$router.push("/searchHome").catch((error)=>{
-          console.log(error)})
+          console.log(error)
+        })
       }else {
         this.$router.push({
           path:'/search',
@@ -128,6 +138,7 @@ export default {
         })
       }
     },
+    //跳转主页
     toHome(){
       this.searchBar=''
       this.$router.push("/home")

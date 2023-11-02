@@ -51,7 +51,7 @@ export default {
   },
   data() {
     return {
-      // 其他图片资源
+      //其他图片资源
       images: [
         require('@/assets/background6.png'),
         require('@/assets/background5.jpg'),
@@ -72,19 +72,22 @@ export default {
           {required:true,message:"请输入密码!",trigger:'blur'}
         ]
       },
-      // 当前显示的背景图片的索引
+      //当前显示的背景图片的索引
       currentIndex: 0,
     };
   },
   mounted() {
+    //计时器，用于背景渐变计时
     setInterval(() => {
       this.currentIndex = (this.currentIndex + 1) % this.images.length;
     }, 5000);
   },
   methods:{
+    //跳转注册界面
     toRegister() {
       this.$router.push("/register")
     },
+    //提交表单
     submitForm(){
       this.$refs.ruleForm.validate((valid)=>{
         if (valid){

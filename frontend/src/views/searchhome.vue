@@ -33,6 +33,7 @@ export default {
     this.getBackImage()
   },
   mounted() {
+    //无用方法，本来是背景渐变计时器
     setInterval(() => {
       this.currentIndex = (this.currentIndex + 1) % 4;
     }, 5000);
@@ -46,9 +47,11 @@ export default {
     }
   },
   methods:{
+    //返回至来时的页面
     goBack(){
       this.$router.back()
     },
+    //跳转搜索
     toSearch(){
       this.$router.push({
         path:'/search',
@@ -59,15 +62,16 @@ export default {
         console.log(err)
       })
     },
+    //获取背景图片
     getBackImage(){
       axios({
         method:'get',
         url:'api/getHeaderImg',
       }).then((resp)=>{
         this.img=resp.data
-        console.log(this.img)
       })
     },
+    //显示加载页面
     showLoading(){
       this.loading=true
       Loading.service({
@@ -76,6 +80,7 @@ export default {
         background: 'rgb(255,255,255)'
       })
     },
+    //关闭加载页面
     hideLoading(){
       this.loading = false
       Loading.service().close()

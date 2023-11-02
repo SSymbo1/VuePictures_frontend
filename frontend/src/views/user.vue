@@ -267,7 +267,7 @@ export default {
         console.log(error)
       })
     }).catch((err)=>{
-      this.$router.push({name:'404page'})
+      this.$router.push("/wrong")
       this.hideLoading()
     })
   },
@@ -317,7 +317,6 @@ export default {
       location.reload()
     },
     submitSelfChange(){
-      console.log(this.userForm.birthday)
       this.userForm.birthday=new Date(this.date).valueOf()
       if (this.userForm.email==='无'){
         this.userForm.email='none';
@@ -443,7 +442,8 @@ export default {
         }
       }).then((resp)=>{
         this.favors=resp.data
-        console.log(this.favors)
+      }).then((err)=>{
+        console.log(err)
       })
     },
     getWorks(){
@@ -455,6 +455,8 @@ export default {
         }
       }).then((resp)=>{
         this.works=resp.data
+      }).catch((err)=>{
+        console.log(err)
       })
     },
     follow(){

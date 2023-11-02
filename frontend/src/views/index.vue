@@ -28,7 +28,7 @@ export default {
   components: {GlassCard},
   data() {
     return {
-      // 其他图片资源
+      //其他图片资源
       images: [
         require('@/assets/background1.png'),
         require('@/assets/background2.png'),
@@ -42,14 +42,17 @@ export default {
     };
   },
   mounted() {
+    //计时器，用于背景渐变计时
     setInterval(() => {
       this.currentIndex = (this.currentIndex + 1) % this.images.length;
     }, 5000);
   },
   methods:{
+    //跳转登录页面
     toLogin(){
       this.$router.push('/login')
     },
+    //跳转注册页面
     toRegister(){
       this.$router.push('/register')
     }

@@ -98,14 +98,17 @@ export default {
     };
   },
   mounted() {
+    //计时器，用于背景渐变计时
     setInterval(() => {
       this.currentIndex = (this.currentIndex + 1) % this.images.length;
     }, 5000);
   },
   methods:{
+    //跳转登录页面
     toLogin(){
       this.$router.push('/login')
     },
+    //表单验证：输入密码和再次输入密码是否一致
     validateConfirmPassword(rule, value, callback){
       if (value!==this.ruleForm.pwd){
         callback(new Error("两次密码不一致！"))
@@ -114,6 +117,7 @@ export default {
         callback()
       }
     },
+    //表单验证：邮箱格式是否正确
     validateConfirmEmail(rule, value, callback){
       if (!value){
         callback()
@@ -128,21 +132,22 @@ export default {
         }
       }
     },
+    //获取邮箱验证码，点击这个按钮后进行60秒倒计时，60秒内不能再次点击这个按钮
     getCaptcha(){
-      this.disable = true; // 禁用按钮
-      let timer = setInterval(() => {
-        if (this.time > 0) {
-          this.time--;
-          this.btn=this.time+"s"
-        } else {
-          clearInterval(timer);
-          this.btn="发送验证码"
-          this.disable = false; // 启用按钮
-          this.time = 60; // 重置倒计时时间
-        }
-      }, 1000);
       const rule=/^[a-z0-9]+([._\\-]*[a-z0-9])*@([a-z0-9]+[-a-z0-9]*[a-z0-9]+.){1,63}[a-z0-9]+$/
       if (rule.test(this.ruleForm.email)&&this.ruleForm.email!==''){
+        this.disable = true; //禁用按钮
+        let timer = setInterval(() => {
+          if (this.time > 0) {
+            this.time--;
+            this.btn=this.time+"s"
+          } else {
+            clearInterval(timer);
+            this.btn="发送验证码"
+            this.disable = false; //启用按钮
+            this.time = 60; //重置倒计时时间
+          }
+        }, 1000);
         this.$message({
           showClose:true,
           message:"验证码已发送!",
@@ -175,6 +180,7 @@ export default {
         })
       }
     },
+    //提交表单
     submitForm() {
       this.$refs.ruleForm.validate((valid)=>{
         if (valid){

@@ -141,6 +141,7 @@ export default {
     }
   },
   methods:{
+    //搜索用户（分页）
     getUser(){
       axios({
         method:'get',
@@ -158,6 +159,7 @@ export default {
         this.hideLoading()
       })
     },
+    //搜索插画（分页）
     getArtworks(){
       axios({
         method:'get',
@@ -172,10 +174,11 @@ export default {
         this.imgs=resp.data.records;
         this.hideLoading()
       }).catch((err)=>{
-        this.$router.push({name:'404page'})
+        this.$router.push("/wrong")
         this.hideLoading()
       })
     },
+    //获取关注状态
     getFollowed(){
       axios({
         method:'get',
@@ -186,10 +189,11 @@ export default {
       }).then((resp)=>{
         this.follow=resp.data;
       }).catch((err)=>{
-        this.$router.push({name:'404page'})
+        this.$router.push("/wrong")
         this.hideLoading()
       })
     },
+    //获取当前登录用户信息
     getLoginUser(){
       axios({
         method:'get',
@@ -201,6 +205,7 @@ export default {
         this.loginUsr=resp.data
       })
     },
+    //搜索用户，搜索插画模式切换
     mode(){
       if (this.searchWhat==='user'){
         this.switchMode=false
@@ -211,6 +216,7 @@ export default {
         this.selectCon='0'
       }
     },
+    //跳转插画搜索
     toArtwork(){
       this.$router.push({
         path:'/search',
@@ -224,6 +230,7 @@ export default {
         console.log(error)
       })
     },
+    //跳转用户搜索
     toSearchUser(){
       this.$router.push({
         path:'/search',
@@ -237,16 +244,19 @@ export default {
         console.log(error)
       })
     },
+    //点击插画分页按钮时自动返回页面顶部
     handleCurrentChangeArtworks(page){
       this.pageArtworks=page;
       this.getArtworks();
       window.scrollTo(0,0)
     },
+    //点击用户分页按钮时自动返回页面顶部
     handleCurrentChangeUser(page){
       this.pageUser=page;
       this.getUser();
       window.scrollTo(0,0)
     },
+    //跳转插画详细信息
     toArtworksInfo(id){
       this.$router.push({
         path:'/artworks',
@@ -255,6 +265,7 @@ export default {
         }
       })
     },
+    //跳转用户个人资料
     toUser(id){
       this.$router.push({
         path:'/user',
@@ -263,9 +274,11 @@ export default {
         }
       })
     },
+    //判断是否关注
     isFollowed(uid){
       return this.follow.includes(uid)
     },
+    //插画收藏（取消收藏）
     favoriteIt(id,liked){
       if (liked===true){
         axios({
@@ -314,6 +327,7 @@ export default {
         })
       }
     },
+    //用户关注（取消关注）
     followIt(fan,isFollowed){
       if (isFollowed){
         axios({
@@ -353,6 +367,7 @@ export default {
         }
       }
     },
+    //显示加载页面
     showLoading(){
       this.loading=true
       Loading.service({
@@ -361,6 +376,7 @@ export default {
         background: 'rgb(255,255,255)'
       })
     },
+    //隐藏加载页面
     hideLoading(){
       this.loading = false
       Loading.service().close()

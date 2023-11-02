@@ -77,9 +77,11 @@ import {Loading} from "element-ui";
 
 export default {
   mounted() {
+    //添加滚动条监听器
     window.addEventListener("scroll",this.rolling)
     this.showLoading()
     this.getArtworks(1);
+    //获取丝数，关注数
     axios({
       method:'get',
       url:'api/fans_info',
@@ -89,18 +91,21 @@ export default {
     }).then((resp)=>{
       this.fans=resp.data
     })
+    //获取每日随机推荐插画
     axios({
       method:'get',
       url:'api/getHeaderImg'
     }).then((resp)=>{
       this.dailyHotArtworks=resp.data
     })
+    //获取热门插画
     axios({
       method:'get',
       url:'api/getHotImg'
     }).then((resp)=>{
       this.hots=resp.data
     })
+    //获取当前登录用户信息
     axios({
       method:'get',
       url:'api/user_info',
@@ -113,9 +118,11 @@ export default {
     this.hideLoading()
   },
   destroyed() {
+    //移除滚动条监听器
     window.removeEventListener("scroll",this.rolling)
   },
   beforeDestroy() {
+    //移除滚动条监听器
     window.removeEventListener("scroll",this.rolling)
   },
   data(){
@@ -142,6 +149,7 @@ export default {
     }
   },
   methods:{
+    //获取插画推荐（分页）
     getArtworks(page){
       axios({
         method:'get',
@@ -155,6 +163,7 @@ export default {
         this.imgs=this.imgs.concat(resp.data.records)
       })
     },
+    //跳转插画详细信息
     toArtworksInfo(id){
       this.$router.push({
         path:'/artworks',
@@ -163,6 +172,7 @@ export default {
         }
       })
     },
+    //插画收藏（取消收藏）
     favoriteIt(id,liked){
       if (liked===true){
         axios({
@@ -209,6 +219,7 @@ export default {
         })
       }
     },
+    //无限滚动加载（类似短视频那种）
     rolling(){
       const scrollTop = this.getScrollTop();
       const clientHeight = this.getClientHeight();
@@ -227,6 +238,7 @@ export default {
         }
       }
     },
+    //客户端界面高度
     getClientHeight() {
       let clientHeight = 0;
       if (document.body.clientHeight && document.documentElement.clientHeight) {
@@ -236,9 +248,11 @@ export default {
       }
       return clientHeight
     },
+    //滚动条长度
     getScrollHeight() {
       return Math.max(document.body.scrollHeight, document.documentElement.scrollHeight)
     },
+    //滚动条距离顶部距离
     getScrollTop() {
       let scrollTop = 0;
       if (document.documentElement && document.documentElement.scrollTop) {
@@ -248,6 +262,7 @@ export default {
       }
       return scrollTop
     },
+    //显示加载页面
     showLoading(){
       this.loading=true
       Loading.service({
@@ -256,6 +271,7 @@ export default {
         background: 'rgb(255,255,255)'
       })
     },
+    //隐藏加载页面
     hideLoading(){
       this.loading = false
       Loading.service().close()

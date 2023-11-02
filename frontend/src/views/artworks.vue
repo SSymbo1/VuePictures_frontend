@@ -63,6 +63,7 @@ import {Loading} from "element-ui";
 export default {
   mounted() {
     this.showLoading()
+    //更新插画最后一次浏览时间
     axios({
       method:'get',
       url:'api/updateTime',
@@ -70,6 +71,7 @@ export default {
         pid:this.$route.query.pid
       }
     }).then((resp)=>{
+      //获取插画详细信息
       axios({
         method:'get',
         url:'api/getArtworksId',
@@ -80,6 +82,7 @@ export default {
         this.artworks=resp.data
         const date=new Date(this.artworks[0].createtime)
         this.artworks[0].createtime=`${date.getFullYear()}-${date.getMonth()+1}-${date.getDate()}`
+        //获取作者详细信息
         axios({
           method:'get',
           url:'api/user_info_id',
@@ -88,6 +91,7 @@ export default {
           }
         }).then((resp)=>{
           this.user=resp.data
+          //插画浏览量数增加
           axios({
             method:"get",
             url:'api/view',
@@ -95,6 +99,7 @@ export default {
               pid:this.$route.query.pid
             }
           }).then((resp)=>{
+            //获取插画收藏状态
             axios({
               method:'get',
               url:'/api/favoriteStatue',
@@ -109,12 +114,13 @@ export default {
               else if(resp.data===false){
                 this.favoriteButton='el-icon-star-on'
               }
+              this.history()
               this.hideLoading()
             })
           })
         })
       }).catch((error)=>{
-        this.$router.push({name:'404page'})
+        this.$router.push("/wrong")
         this.hideLoading()
       })
     })
@@ -127,6 +133,7 @@ export default {
     }
   },
   methods:{
+    //下载插画
     downloadImg(){
       axios({
         method:'get',
@@ -145,9 +152,11 @@ export default {
         document.body.removeChild(link);
       })
     },
+    //返回之前的界面
     goBack(){
       this.$router.back()
     },
+    //跳转用户详细信息
     toUser(){
       this.$router.push({
         path:'/user',
@@ -156,6 +165,7 @@ export default {
         }
       })
     },
+    //插画收藏（取消收藏）
     favorite(){
       if (this.favoriteButton==='el-icon-star-off'){
         axios({
@@ -196,6 +206,31 @@ export default {
         })
       }
     },
+    //历史记录添加（更新）
+    history(){
+      axios({
+        method:'post',
+        url:'api/addHistory',
+        data:{
+          token:localStorage.getItem("token"),
+          pid:this.$route.query.pid,
+          viewtime:0
+        }
+      }).then((resp)=>{
+        if (resp.data.code===4444){
+          console.log(resp.data.message)
+        }
+        else if(resp.data.code===4445){
+          console.log(resp.data.message)
+        }
+        else if(resp.data.code===4443){
+          console.log(resp.data.message)
+        }
+      }).catch((err)=>{
+        console.log(err)
+      })
+    },
+    //显示加载界面
     showLoading(){
       this.loading=true
       Loading.service({
@@ -204,6 +239,7 @@ export default {
         background: 'rgb(255,255,255)'
       })
     },
+    //隐藏加载界面
     hideLoading(){
       this.loading = false
       Loading.service().close()
