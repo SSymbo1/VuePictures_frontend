@@ -10,10 +10,11 @@ import homepage from "@/views/homepage.vue";
 import NProgress from "nprogress"
 import "nprogress/nprogress.css"
 import artworks from "@/views/artworks.vue";
-import submit from "@/views/submit.vue";
 import search from "@/views/search.vue";
 import searchhome from "@/views/searchhome.vue";
 import history from "@/views/history.vue";
+import ideacenter from "@/views/ideacenter.vue";
+import ideahome from "@/views/idea/home.vue"
 
 Vue.use(VueRouter)
 NProgress.configure({showSpinner: false})
@@ -58,10 +59,6 @@ const router=new VueRouter({
                     component:artworks,
                 },
                 {
-                    path:'/submit',
-                    component:submit
-                },
-                {
                     path:'/search',
                     component:search
                 },
@@ -72,6 +69,16 @@ const router=new VueRouter({
                 {
                     path:'/history',
                     component:history
+                },
+                {
+                    path:'/idea',
+                    component:ideacenter,
+                    children:[
+                        {
+                            path:'/',
+                            component:ideahome
+                        }
+                    ]
                 }
             ]
         }

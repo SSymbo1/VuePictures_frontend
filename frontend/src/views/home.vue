@@ -10,24 +10,24 @@
             <el-menu-item>
               <span class="logo" @click="toHome()">VuePictures</span>
             </el-menu-item>
-            <el-menu-item>
+            <el-menu-item index="0">
               <el-input placeholder="请输入搜索内容" v-model="searchBar" class="input-with-select" style="width: 350px">
                 <el-button slot="append" icon="el-icon-search" @click="toSearch()"></el-button>
               </el-input>
             </el-menu-item>
-            <el-submenu index="0">
+            <el-submenu index="1">
               <template slot="title">选项占位符</template>
-              <el-menu-item index="0-1">选项1</el-menu-item>
-              <el-menu-item index="0-2">选项2</el-menu-item>
-              <el-menu-item index="0-3">选项3</el-menu-item>
+              <el-menu-item index="1-1">选项1</el-menu-item>
+              <el-menu-item index="1-2">选项2</el-menu-item>
+              <el-menu-item index="1-3">选项3</el-menu-item>
             </el-submenu>
-            <el-menu-item index="1">动态</el-menu-item>
-            <el-menu-item index="2" @click="toSubmit">创作中心</el-menu-item>
-            <el-submenu index="3">
+            <el-menu-item index="2">动态</el-menu-item>
+            <el-menu-item index="3" @click="toSubmit">创作中心</el-menu-item>
+            <el-submenu index="4">
               <template slot="title"><el-avatar :size="50" :src="circleUrl"></el-avatar></template>
-              <el-menu-item index="3-1" @click="toUserInfo()">个人资料</el-menu-item>
-              <el-menu-item index="3-2" @click="toHistory()">历史</el-menu-item>
-              <el-menu-item index="3-3" @click="exit">退出登录</el-menu-item>
+              <el-menu-item index="4-1" @click="toUserInfo()">个人资料</el-menu-item>
+              <el-menu-item index="4-2" @click="toHistory()">历史</el-menu-item>
+              <el-menu-item index="4-3" @click="exit">退出登录</el-menu-item>
             </el-submenu>
           </el-menu>
         </el-header>
@@ -116,7 +116,7 @@ export default {
     //跳转投稿
     toSubmit(){
       this.searchBar=''
-      this.$router.push('/submit')
+      this.$router.push('/idea')
     },
     //跳转搜索
     toSearch(){
@@ -141,6 +141,7 @@ export default {
     //跳转主页
     toHome(){
       this.searchBar=''
+      this.activeIndex=-1
       this.$router.push("/home")
     }
   }

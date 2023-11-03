@@ -229,12 +229,9 @@ export default {
         if (this.page<=this.maxPage){
           this.page++
           this.getArtworks(this.page)
-          if (this.page===this.maxPage){
-            this.page=0
-          }
         }
-        else {
-          this.getArtworks(this.page)
+        else if(this.page>this.maxPage){
+          this.imgs= this.imgs.concat(this.imgs)
         }
       }
     },
