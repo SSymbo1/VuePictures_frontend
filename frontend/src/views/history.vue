@@ -12,8 +12,8 @@
             v-model="date"
             value-format="yyyy-MM-dd">
         </el-date-picker>
-        <el-button type="primary" style="margin-left: 5px" round @click="searchHistory()">搜索</el-button>
-        <el-button type="danger" style="margin-left: 5px" round @click="deleteAllHistory()">清空历史</el-button>
+        <el-button type="primary" icon="el-icon-search" style="margin-left: 5px" round @click="searchHistory()">搜索</el-button>
+        <el-button type="danger" icon="el-icon-delete" style="margin-left: 5px" round @click="deleteAllHistory()">清空历史</el-button>
       </div>
       <div class="history-card">
         <div v-if="this.history.length===0" class="not-found">
@@ -111,7 +111,8 @@ export default {
       this.$confirm("是否删除所有历史记录？（注意：此操作不可逆）","删除所有历史记录",{
         confirmButtonText:'确认删除',
         cancelButtonText:'取消',
-        type:"warning"
+        type:"warning",
+        roundButton:true
       }).then(()=>{
         axios({
           method:'get',
@@ -134,14 +135,14 @@ export default {
             })
           }
         })
-      }).catch(()=>{
-      })
+      }).catch(()=>{})
     },
     deleteHistory(pid){
       this.$confirm("是否删除这条历史记录？","删除历史记录",{
         confirmButtonText:'删除',
         cancelButtonText:'取消',
-        type:'warning'
+        type:'warning',
+        roundButton:true
       }).then(()=>{
         axios({
           method:"post",

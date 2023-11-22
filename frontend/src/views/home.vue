@@ -4,30 +4,30 @@
       <div class="container">
         <el-header class="right-align">
           <el-menu
-              :default-active="activeIndex"
+              :default-active="activeIndex.toString()"
               class="el-menu-demo"
               mode="horizontal">
-            <el-menu-item>
+            <el-menu-item index="/home">
               <span class="logo" @click="toHome()">VuePictures</span>
             </el-menu-item>
-            <el-menu-item index="0">
+            <el-menu-item index="/search">
               <el-input placeholder="请输入搜索内容" v-model="searchBar" class="input-with-select" style="width: 350px">
                 <el-button slot="append" icon="el-icon-search" @click="toSearch()"></el-button>
               </el-input>
             </el-menu-item>
-            <el-submenu index="1">
+            <el-submenu index="/choose">
               <template slot="title">选项占位符</template>
-              <el-menu-item index="1-1">选项1</el-menu-item>
-              <el-menu-item index="1-2">选项2</el-menu-item>
-              <el-menu-item index="1-3">选项3</el-menu-item>
+              <el-menu-item index="/choose1">选项1</el-menu-item>
+              <el-menu-item index="/choose2">选项2</el-menu-item>
+              <el-menu-item index="/choose3">选项3</el-menu-item>
             </el-submenu>
-            <el-menu-item index="2">动态</el-menu-item>
-            <el-menu-item index="3" @click="toSubmit">创作中心</el-menu-item>
-            <el-submenu index="4">
+            <el-menu-item index="/trends">动态</el-menu-item>
+            <el-menu-item index="/ideahome" @click="toSubmit">创作中心</el-menu-item>
+            <el-submenu index="/user">
               <template slot="title"><el-avatar :size="50" :src="circleUrl"></el-avatar></template>
-              <el-menu-item index="4-1" @click="toUserInfo()">个人资料</el-menu-item>
-              <el-menu-item index="4-2" @click="toHistory()">历史</el-menu-item>
-              <el-menu-item index="4-3" @click="exit">退出登录</el-menu-item>
+              <el-menu-item index="/personal" @click="toUserInfo()">个人资料</el-menu-item>
+              <el-menu-item index="/history" @click="toHistory()">历史</el-menu-item>
+              <el-menu-item index="/exit" @click="exit">退出登录</el-menu-item>
             </el-submenu>
           </el-menu>
         </el-header>
@@ -51,7 +51,7 @@ import axios from "axios";
 export default {
   data() {
     return {
-      activeIndex: '1',
+      activeIndex: "0",
       circleUrl:'',
       searchBar:'',
       user:[]
@@ -84,7 +84,8 @@ export default {
       this.$confirm("是否退出登录？","退出",{
         confirmButtonText:'退出',
         cancelButtonText:'取消',
-        type:'info'
+        type:'info',
+        roundButton:true
       }).then(()=>{
         localStorage.removeItem("token");
         router.push('/');
@@ -116,7 +117,7 @@ export default {
     //跳转投稿
     toSubmit(){
       this.searchBar=''
-      this.$router.push('/idea')
+      this.$router.push('/ideahome')
     },
     //跳转搜索
     toSearch(){

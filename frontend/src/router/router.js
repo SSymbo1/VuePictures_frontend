@@ -1,4 +1,5 @@
 import VueRouter from "vue-router";
+import "nprogress/nprogress.css"
 import Vue from "vue";
 import index from "../views/index.vue"
 import login from "../views/login.vue"
@@ -6,15 +7,16 @@ import register from "../views/register.vue"
 import home from "../views/home.vue"
 import not_exist_page from "../views/error/404page.vue"
 import user from "../views/user.vue"
-import homepage from "@/views/homepage.vue";
+import homepage from "@/views/home_page.vue";
 import NProgress from "nprogress"
-import "nprogress/nprogress.css"
 import artworks from "@/views/artworks.vue";
 import search from "@/views/search.vue";
-import searchhome from "@/views/searchhome.vue";
+import searchhome from "@/views/search_home.vue";
 import history from "@/views/history.vue";
-import ideacenter from "@/views/ideacenter.vue";
+import ideacenter from "@/views/idea_center.vue";
 import ideahome from "@/views/idea/home.vue"
+import submit from "@/views/idea/submit.vue";
+import artwork_manage from "@/views/idea/artwork_manage.vue";
 
 Vue.use(VueRouter)
 NProgress.configure({showSpinner: false})
@@ -75,8 +77,16 @@ const router=new VueRouter({
                     component:ideacenter,
                     children:[
                         {
-                            path:'/',
+                            path:'/ideahome',
                             component:ideahome
+                        },
+                        {
+                            path:'/submit',
+                            component:submit
+                        },
+                        {
+                            path:'/artwork_manage',
+                            component:artwork_manage
                         }
                     ]
                 }

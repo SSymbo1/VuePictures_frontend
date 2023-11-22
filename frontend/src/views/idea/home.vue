@@ -15,9 +15,8 @@
             <span>最近的投稿</span>
           </div>
           <div>
-            <span>
-
-            </span>
+            <div v-if="time.submit!=='1970-01-01 08:00:00'">{{time.submit}}</div>
+            <div v-else>无投稿</div>
           </div>
         </el-card>
         <el-card class="data-card" shadow="hover">
@@ -25,6 +24,8 @@
             <span>最近的被收藏的作品</span>
           </div>
           <div>
+            <div v-if="time.submit!=='1970-01-01 08:00:00'">{{time.favorite}}</div>
+            <div v-else>无投稿</div>
           </div>
         </el-card>
         <el-card class="data-card" shadow="hover">
@@ -32,6 +33,8 @@
             <span>最近被浏览的作品</span>
           </div>
           <div>
+            <div v-if="time.submit!=='1970-01-01 08:00:00'">{{time.view}}</div>
+            <div v-else>无投稿</div>
           </div>
         </el-card>
         <el-card class="data-card" shadow="hover">
@@ -39,6 +42,9 @@
             <span>粉丝</span>
           </div>
           <div>
+            <div>
+              {{ideas.fans}}
+            </div>
           </div>
         </el-card>
         <el-card class="data-card" shadow="hover">
@@ -46,9 +52,11 @@
             <span>作品总浏览量</span>
           </div>
           <div>
+            <span>
+              {{ideas.views}}
+            </span>
           </div>
         </el-card>
-
       </div>
     </el-main>
   </el-container>
@@ -56,15 +64,11 @@
 
 <script>
 import axios from "axios";
-import index from "vuex";
+import {Loading} from "element-ui";
 
 export default {
-  computed: {
-    index() {
-      return index
-    }
-  },
-  created() {
+  mounted() {
+    this.showLoading()
     this.whatsTime()
     this.getUserInfo()
     this.getFansInfo()
@@ -72,6 +76,11 @@ export default {
   },
   data(){
     return{
+      time:{
+        view:'',
+        submit:'',
+        favorite:'',
+      },
       ideas:[],
       userInfo:[],
       fans:[],
@@ -113,15 +122,32 @@ export default {
         }
       }).then((resp)=>{
         this.ideas=resp.data
-        this.constTime()
-        console.log(this.ideas)
+        this.constTime(this.ideas.lastFavorite.favoritetime,'f')
+        this.constTime(this.ideas.lastSubmit.createtime,'s')
+        this.constTime(this.ideas.lastView.lastviewtime,'v')
+        this.hideLoading()
       })
     },
-    constTime(){
-
+    constTime(time,cases){
+      let date=new Date(time)
+      let Y = date.getFullYear(),
+          M = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1),
+          D = (date.getDate() < 10 ? '0' + (date.getDate()) : date.getDate()),
+          h = (date.getHours() < 10 ? '0' + (date.getHours()) : date.getHours()),
+          m = (date.getMinutes() < 10 ? '0' + (date.getMinutes()) : date.getMinutes()),
+          s = (date.getSeconds() < 10 ? '0' + (date.getSeconds()) : date.getSeconds());
+      if (cases==='f'){
+        this.time.favorite=Y + '-' + M + '-' + D + ' ' + h + ':' + m + ':' + s
+      }
+      else if(cases==='s'){
+        this.time.submit=Y + '-' + M + '-' + D + ' ' + h + ':' + m + ':' + s
+      }
+      else if(cases==='v'){
+        this.time.view=Y + '-' + M + '-' + D + ' ' + h + ':' + m + ':' + s
+      }
     },
     whatsTime(){
-      const date = new Date();
+      let date = new Date();
       if ((date.getHours()>=2&&date.getHours()<4)||(date.getHours()>=22||date.getHours()<2)){
         this.welcome='还没睡码？'
         this.slogn='夜深人静，好好休息。'
@@ -146,7 +172,19 @@ export default {
         this.welcome='晚上好！'
         this.slogn='放松心情，享受夜晚。'
       }
-    }
+    },
+    showLoading(){
+      this.loading=true
+      Loading.service({
+        lock:true,
+        text:'加载中...',
+        background: 'rgb(255,255,255)'
+      })
+    },
+    hideLoading(){
+      this.loading = false
+      Loading.service().close()
+    },
   }
 }
 </script>

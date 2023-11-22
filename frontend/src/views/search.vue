@@ -54,10 +54,10 @@
               </div>
             </div>
             <el-pagination
-                :page-size="10"
+                :page-size="9"
                 :pager-count=7
                 layout="prev, pager, next"
-                :total="this.maxPageArtworks*10"
+                :total="this.maxPageArtworks*9"
                 @current-change="handleCurrentChangeArtworks">
             </el-pagination>
           </div>
@@ -95,10 +95,10 @@
               </div>
             </div>
             <el-pagination
-                :page-size="10"
+                :page-size="9"
                 :pager-count=7
                 layout="prev, pager, next"
-                :total="this.maxPageUser*10"
+                :total="this.maxPageUser*9"
                 @current-change="handleCurrentChangeUser">
             </el-pagination>
           </div>
