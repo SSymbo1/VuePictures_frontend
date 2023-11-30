@@ -40,6 +40,10 @@
           <div>
             <el-button v-show="buttonShow" type="primary" round @click="updateUserSelfDialog" >修改个人资料</el-button>
             <el-button v-show="!buttonShow" type="primary" round @click="follow">{{followButton}}</el-button>
+            <span v-if="this.logUid!==Number(this.$route.query.uid)" style="margin-left: 8px">
+              <el-button v-if="isBan" type="danger" round @click="blockUser">从黑名单移除</el-button>
+              <el-button v-else type="danger" round @click="blockUser">加入黑名单</el-button>
+            </span>
           </div>
         </div>
       </div>
@@ -52,39 +56,49 @@
         </el-menu>
       </div>
       <div class="data-card">
-        <div v-if="switchMode===true" v-for="(work,index) in works" :key="index" class="card">
-          <el-card shadow="hover" :body-style="{padding:'0px'}" class="image-card">
-            <el-image
-                :src="work.picture"
-                fit="cover"
-                style="width: 260px;height: 150px;cursor: pointer"
-                lazy
-                @click="toArtworksInfo(work.pid)"></el-image>
-            <div style="padding: 14px" >
-              <span @click="toArtworksInfo(work.pid)" style="cursor: pointer">{{work.subtitle}}</span>
-              <div class="bottom clearfix">
-                <el-button type="text" class="star-button" v-if="work.liked" icon="el-icon-star-on" @click="favoriteIt(work.pid,work.liked)"></el-button>
-                <el-button type="text" class="star-button" v-else icon="el-icon-star-off" @click="favoriteIt(work.pid,work.liked)"></el-button>
+        <div v-if="switchMode===true&&banStatue.success===false" v-for="(work,index) in works" :key="index" class="card">
+          <transition name="el-fade-in-linear" appear>
+            <el-card shadow="hover" :body-style="{padding:'0px'}" class="image-card">
+              <el-image
+                  :src="work.picture"
+                  fit="cover"
+                  style="width: 260px;height: 150px;cursor: pointer"
+                  lazy
+                  @click="toArtworksInfo(work.pid)"></el-image>
+              <div style="padding: 14px" >
+                <span @click="toArtworksInfo(work.pid)" style="cursor: pointer">{{work.subtitle}}</span>
+                <div class="bottom clearfix">
+                  <el-button type="text" class="star-button" v-if="work.liked" icon="el-icon-star-on" @click="favoriteIt(work.pid,work.liked)"></el-button>
+                  <el-button type="text" class="star-button" v-else icon="el-icon-star-off" @click="favoriteIt(work.pid,work.liked)"></el-button>
+                </div>
               </div>
-            </div>
-          </el-card>
+            </el-card>
+          </transition>
         </div>
-        <div v-if="switchMode===false" v-for="(favor,index) in favors" :key="index" class="card">
-          <el-card shadow="hover" :body-style="{padding:'0px'}" class="image-card">
-            <el-image
-                :src="favor.picture"
-                fit="cover"
-                style="width: 260px;height: 150px;cursor: pointer"
-                lazy
-                @click="toArtworksInfo(favor.pid)"></el-image>
-            <div style="padding: 14px" >
-              <span @click="toArtworksInfo(favor.pid)" style="cursor: pointer">{{favor.subtitle}}</span>
-              <div class="bottom clearfix">
-                <el-button type="text" class="star-button" v-if="favor.liked" icon="el-icon-star-on" @click="favoriteIt(favor.pid,favor.liked)"></el-button>
-                <el-button type="text" class="star-button" v-else icon="el-icon-star-off" @click="favoriteIt(favor.pid,favor.liked)"></el-button>
+        <div v-if="switchMode===true&&banStatue.success===true">
+          <span class="ban">{{banStatue.message}}</span>
+        </div>
+        <div v-if="switchMode===false&&banStatue.success===false" v-for="(favor,index) in favors" :key="index" class="card">
+          <transition name="el-fade-in-linear" appear>
+            <el-card shadow="hover" :body-style="{padding:'0px'}" class="image-card">
+              <el-image
+                  :src="favor.picture"
+                  fit="cover"
+                  style="width: 260px;height: 150px;cursor: pointer"
+                  lazy
+                  @click="toArtworksInfo(favor.pid)"></el-image>
+              <div style="padding: 14px" >
+                <span @click="toArtworksInfo(favor.pid)" style="cursor: pointer">{{favor.subtitle}}</span>
+                <div class="bottom clearfix">
+                  <el-button type="text" class="star-button" v-if="favor.liked" icon="el-icon-star-on" @click="favoriteIt(favor.pid,favor.liked)"></el-button>
+                  <el-button type="text" class="star-button" v-else icon="el-icon-star-off" @click="favoriteIt(favor.pid,favor.liked)"></el-button>
+                </div>
               </div>
-            </div>
-          </el-card>
+            </el-card>
+          </transition>
+        </div>
+        <div v-if="switchMode===false&&banStatue.success===true">
+          <span class="ban">{{banStatue.message}}</span>
         </div>
       </div>
     </el-main>
@@ -186,11 +200,16 @@ export default {
           {max:15,message:"昵称不得大于15！",trigger:'blur'}
         ],
         email:[
-          {max:30,message:"邮箱长度不能大于30！",trigger:'blur'}
+          {required: true, message: '邮箱地址不能为空', trigger: 'blur'},
+          { validator: this.validateConfirmEmail, trigger: 'blur'}
         ],
       },
       header:{
         'Auth':localStorage.getItem("token")
+      },
+      banStatue:{
+        success:false,
+        message:''
       },
       userBkList:[],
       works:[],
@@ -201,6 +220,7 @@ export default {
       logUid:0,
       pageUid:0,
       followButton:'',
+      isBan:false,
       switchMode:true,
       buttonShow:false,
       updateBkVisible:false,
@@ -208,70 +228,73 @@ export default {
     }
   },
   created() {
-    this.showLoading()
     this.getWorks()
     this.getFavorite()
-    axios({
-      method:'get',
-      url:'api/user_info_id',
-      params:{
-        uid:this.$route.query.uid
-      }
-    }).then((resp)=>{
-      this.pageUid=this.$route.query.uid
-      this.user=resp.data[0]
-      const date=new Date(this.user.birthday)
-      this.user.birthday=`${date.getFullYear()}-${date.getMonth()+1}-${date.getDate()}`
-      if (this.user.email==='none'){
-        this.user.email='无'
-      }
-      if (this.user.sex==='none'){
-        this.user.sex='无'
-      }
-      if (this.user.sex==='men'){
-        this.user.sex='男'
-      }
-      if (this.user.sex==='women'){
-        this.user.sex='女'
-      }
+    this.getUserBlocked()
+    this.dataRender()
+  },
+  methods:{
+    dataRender(){
       axios({
         method:'get',
-        url:'api/user_info',
+        url:'api/user_info_id',
         params:{
-          token:localStorage.getItem("token")
+          uid:this.$route.query.uid
         }
       }).then((resp)=>{
-        this.logUid=resp.data[0].iid
-        if (this.logUid===this.user.iid){
-          this.buttonShow=true
+        this.pageUid=this.$route.query.uid
+        this.user=resp.data[0]
+        const date=new Date(this.user.birthday)
+        this.user.birthday=`${date.getFullYear()}-${date.getMonth()+1}-${date.getDate()}`
+        if (this.user.email==='none'){
+          this.user.email='无'
+        }
+        if (this.user.sex==='none'){
+          this.user.sex='无'
+        }
+        if (this.user.sex==='men'){
+          this.user.sex='男'
+        }
+        if (this.user.sex==='women'){
+          this.user.sex='女'
         }
         axios({
           method:'get',
-          url:'api/followStatue',
+          url:'api/user_info',
           params:{
-            'uid':this.pageUid,
-            'fan':this.logUid
+            token:localStorage.getItem("token")
           }
         }).then((resp)=>{
-          if (resp.data){
-            this.followButton='关注'
+          this.logUid=resp.data[0].iid
+          if (this.logUid===this.user.iid){
+            this.buttonShow=true
           }
-          else if (!resp.data){
-            this.followButton='取消关注'
-          }
-          this.hideLoading()
+          axios({
+            method:'get',
+            url:'api/followStatue',
+            params:{
+              'uid':this.pageUid,
+              'fan':this.logUid
+            }
+          }).then((resp)=>{
+            if (resp.data){
+              this.followButton='关注'
+            }
+            else if (!resp.data){
+              this.followButton='取消关注'
+            }
+            this.hideLoading()
+          }).catch((error)=>{
+            console.log(error)
+          })
         }).catch((error)=>{
           console.log(error)
         })
-      }).catch((error)=>{
-        console.log(error)
+      }).catch((err)=>{
+        this.$router.push("/wrong")
+        this.hideLoading()
       })
-    }).catch((err)=>{
-      this.$router.push("/wrong")
-      this.hideLoading()
-    })
-  },
-  methods:{
+    },
     updateBkDialog(){
       this.updateUrl='api/uploadBk'
       this.dialogTitle='修改背景图片'
@@ -365,12 +388,61 @@ export default {
         }
       })
     },
+    getUserBlocked(){
+      axios({
+        method:'get',
+        url:'api/getBlockedUser',
+        params:{
+          token:localStorage.getItem("token"),
+          uid:this.$route.query.uid
+        }
+      }).then((resp)=>{
+        this.isBan = resp.data.success === true;
+        if (Number(this.$route.query.uid)!==this.logUid){
+          axios({
+            method:'get',
+            url:'api/blockStatue',
+            params:{
+              token:localStorage.getItem("token"),
+              uid:this.$route.query.uid
+            }
+          }).then((resp)=>{
+            this.banStatue.success=resp.data.success
+            this.banStatue.message=resp.data.message
+          }).catch((error)=>{
+            console.log(error)
+          })
+        }
+      }).catch((error)=>{
+        console.log(error)
+      })
+    },
     toArtworksInfo(id){
       this.$router.push({
         path:'/artworks',
         query:{
           pid:id
         }
+      })
+    },
+    blockUser(){
+      axios({
+        method:'get',
+        url:'api/block',
+        params:{
+          token:localStorage.getItem("token"),
+          uid:this.$route.query.uid
+        }
+      }).then((resp)=>{
+        if(resp.data.success){
+          this.$message.success(resp.data.message)
+        }else {
+          this.$message.error(resp.data.message)
+        }
+        this.getWorks()
+        this.getFavorite()
+        this.getUserBlocked()
+        this.dataRender()
       })
     },
     favoriteIt(id,liked){
@@ -438,7 +510,8 @@ export default {
         method:'get',
         url:'api/getFavorite',
         params:{
-          uid:this.$route.query.uid
+          uid:this.$route.query.uid,
+          token:localStorage.getItem("token")
         }
       }).then((resp)=>{
         this.favors=resp.data
@@ -447,6 +520,7 @@ export default {
       })
     },
     getWorks(){
+      this.showLoading()
       axios({
         method:'get',
         url:'api/getWorks',
@@ -497,6 +571,20 @@ export default {
         })
       }
     },
+    validateConfirmEmail(rule, value, callback){
+      if (!value){
+        callback()
+      }
+      else {
+        const email=/^[a-z0-9]+([._\\-]*[a-z0-9])*@([a-z0-9]+[-a-z0-9]*[a-z0-9]+.){1,63}[a-z0-9]+$/.test(value)
+        if (!email){
+          callback(new Error("请输入正确的邮箱格式！"))
+        }
+        else {
+          callback()
+        }
+      }
+    },
     showLoading(){
       this.loading=true
       Loading.service({
@@ -517,6 +605,12 @@ export default {
 </script>
 
 <style scoped>
+@import "@/assets/font/font.css";
+.ban{
+  font-family: "font_aigei_com",sans-serif;
+  font-weight: bolder;
+  font-size: large;
+}
 .userSelfCard {
   display: flex;
   position: relative;

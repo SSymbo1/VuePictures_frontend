@@ -51,24 +51,19 @@ import axios from "axios";
 export default {
   data() {
     return {
+      ws:null,
       activeIndex: "0",
       circleUrl:'',
       searchBar:'',
-      user:[]
+      user:[],
+      websocket:null,
     };
   },
+  created() {
+    this.initWebSocket()
+  },
   mounted() {
-    //获取当前登录用户信息
-    axios({
-      method:'get',
-      url:'/api/user_info',
-      params:{
-        token:localStorage.getItem("token")
-      }
-    }).then((resp)=>{
-      this.circleUrl=resp.data[0].userimage;
-      this.user=resp.data
-    })
+    this.getUserInfo()
   },
   destroyed() {
     //移除滚动条监听器
@@ -79,6 +74,39 @@ export default {
     window.removeEventListener("scroll",this.rolling)
   },
   methods: {
+    //获取当前登录用户信息
+    getUserInfo(){
+      axios({
+        method:'get',
+        url:'/api/user_info',
+        params:{
+          token:localStorage.getItem("token")
+        }
+      }).then((resp)=>{
+        this.circleUrl=resp.data[0].userimage;
+        this.user=resp.data
+      })
+    },
+    initWebSocket(){
+      const token=localStorage.getItem("token")
+      if (this.ws===null){
+        this.ws=new WebSocket(`ws://localhost:9090/chat_ws/${token}`)
+        this.ws.addEventListener('open',(event)=>{
+          console.log("成功连接至websocket服务器")
+          this.$notify({
+            title: '连接成功',
+            message: 'WebSocket连接成功',
+            type: 'success',
+            position:'bottom-right'
+          })
+          console.log(event)
+        })
+        this.ws.addEventListener('message',(event)=>{
+          console.log("从websocket服务器获取信息")
+          console.log(JSON.parse(event.data))
+        })
+      }
+    },
     //退出登录（注销）
     exit(){
       this.$confirm("是否退出登录？","退出",{
@@ -88,6 +116,8 @@ export default {
         roundButton:true
       }).then(()=>{
         localStorage.removeItem("token");
+        this.ws.close()
+        this.ws=null
         router.push('/');
         this.$message({
           type:'success',

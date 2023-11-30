@@ -17,6 +17,10 @@ import ideacenter from "@/views/idea_center.vue";
 import ideahome from "@/views/idea/home.vue"
 import submit from "@/views/idea/submit.vue";
 import artwork_manage from "@/views/idea/artwork_manage.vue";
+import fans_manage from "@/views/idea/fans_manage.vue";
+import artwork_data from "@/views/idea/artwork_data.vue";
+import fans_data from "@/views/idea/fans_data.vue";
+
 
 Vue.use(VueRouter)
 NProgress.configure({showSpinner: false})
@@ -87,6 +91,18 @@ const router=new VueRouter({
                         {
                             path:'/artwork_manage',
                             component:artwork_manage
+                        },
+                        {
+                          path:'/fans_manage',
+                          component:fans_manage
+                        },
+                        {
+                            path:'/artwork_data',
+                            component:artwork_data
+                        },
+                        {
+                            path:'/fans_data',
+                            component:fans_data
                         }
                     ]
                 }

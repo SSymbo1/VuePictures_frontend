@@ -17,15 +17,15 @@
           <i class="el-icon-picture"></i>
           <span>插画管理</span>
         </el-menu-item>
-        <el-menu-item index="/fans_manage">
+        <el-menu-item index="/fans_manage" @click="toFansManage">
           <i class="el-icon-s-custom"></i>
           <span>粉丝管理</span>
         </el-menu-item>
-        <el-menu-item index="/artwork_data">
+        <el-menu-item index="/artwork_data" @click="toArtworkData">
           <i class="el-icon-s-order"></i>
           <span>插画数据</span>
         </el-menu-item>
-        <el-menu-item index="/fans_data">
+        <el-menu-item index="/fans_data" @click="toFansData">
           <i class="el-icon-message-solid"></i>
           <span>粉丝数据</span>
         </el-menu-item>
@@ -57,6 +57,15 @@ export default {
     },
     toArtworkManage(){
       router.push("/artwork_manage")
+    },
+    toFansManage(){
+      router.push("/fans_manage")
+    },
+    toArtworkData(){
+      router.push("/artwork_data")
+    },
+    toFansData(){
+      router.push("/fans_data")
     }
   }
 }

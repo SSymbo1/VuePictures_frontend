@@ -27,44 +27,50 @@
             </el-carousel>
           </div>
         </div>
-        <div class="user-follow-update-card">
-          <span class="label-updates">动态：</span>
-        </div>
-        <div class="user-card">
-          <div class="user-card-head-image">
-            <img :src="user.userimage" alt="" style="border-radius: 50%;width: 100px;height: 100px" :title="user.nickname">
+        <transition name="el-fade-in-linear" appear>
+          <div class="user-follow-update-card">
+            <span class="label-updates">动态：</span>
           </div>
-          <div class="user-card-name">
-            <span>{{user.nickname}}</span>
+        </transition>
+        <transition name="el-fade-in-linear" appear>
+          <div class="user-card">
+            <div class="user-card-head-image">
+              <img :src="user.userimage" alt="" style="border-radius: 50%;width: 100px;height: 100px" :title="user.nickname">
+            </div>
+            <div class="user-card-name">
+              <span>{{user.nickname}}</span>
+            </div>
+            <div class="user-card-follow">
+              <span>关注:{{fans[1]}}</span>
+              <el-divider direction="vertical"></el-divider>
+              <span>粉丝:{{fans[0]}}</span>
+            </div>
+            <div class="user-card-self-info">
+              <span>{{user.self}}</span>
+            </div>
           </div>
-          <div class="user-card-follow">
-            <span>关注:{{fans[1]}}</span>
-            <el-divider direction="vertical"></el-divider>
-            <span>粉丝:{{fans[0]}}</span>
-          </div>
-          <div class="user-card-self-info">
-            <span>{{user.self}}</span>
-          </div>
-        </div>
+        </transition>
       </div>
       <span class="label-hope-you-like">猜你喜欢：</span>
       <div class="you-like">
         <div v-for="(image,index) in imgs" :key="index" class="like-card">
-          <el-card shadow="hover" :body-style="{padding:'0px'}" class="image-card">
-            <el-image
-                :src="image.picture"
-                fit="cover"
-                style="width: 260px;height: 150px;cursor: pointer"
-                lazy
-                @click="toArtworksInfo(image.pid)"></el-image>
-            <div style="padding: 14px" >
-              <span @click="toArtworksInfo(image.pid)" style="cursor: pointer">{{image.subtitle}}</span>
-              <div class="bottom clearfix">
-                <el-button type="text" class="button" v-if="image.liked" icon="el-icon-star-on" @click="favoriteIt(image.pid,image.liked)"></el-button>
-                <el-button type="text" class="button" v-else icon="el-icon-star-off" @click="favoriteIt(image.pid,image.liked)"></el-button>
+          <transition name="el-fade-in-linear" appear>
+            <el-card shadow="hover" :body-style="{padding:'0px'}" class="image-card">
+              <el-image
+                  :src="image.picture"
+                  fit="cover"
+                  style="width: 260px;height: 150px;cursor: pointer"
+                  lazy
+                  @click="toArtworksInfo(image.pid)"></el-image>
+              <div style="padding: 14px" >
+                <span @click="toArtworksInfo(image.pid)" style="cursor: pointer">{{image.subtitle}}</span>
+                <div class="bottom clearfix">
+                  <el-button type="text" class="button" v-if="image.liked" icon="el-icon-star-on" @click="favoriteIt(image.pid,image.liked)"></el-button>
+                  <el-button type="text" class="button" v-else icon="el-icon-star-off" @click="favoriteIt(image.pid,image.liked)"></el-button>
+                </div>
               </div>
-            </div>
-          </el-card>
+            </el-card>
+          </transition>
         </div>
       </div>
     </el-main>
@@ -231,7 +237,8 @@ export default {
           this.getArtworks(this.page)
         }
         else if(this.page>this.maxPage){
-          this.imgs= this.imgs.concat(this.imgs)
+          this.page=1
+          this.getArtworks(this.page)
         }
       }
     },

@@ -52,8 +52,7 @@ import {Loading} from "element-ui";
 import axios from "axios";
 
 export default {
-  mounted() {
-    this.showLoading()
+  created() {
     this.getHistory()
   },
   data(){
@@ -67,6 +66,7 @@ export default {
       this.$router.back()
     },
     getHistory(){
+      this.showLoading()
       axios({
         method:"get",
         url:'api/historyUid',

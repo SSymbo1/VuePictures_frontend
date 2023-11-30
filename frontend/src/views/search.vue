@@ -18,39 +18,41 @@
             </div>
             <div v-else>
               <div v-for="(img,index) in imgs" :key="index">
-                <el-card shadow="hover" class="image-card" >
-                  <div style="margin:0;float: left" @click="toArtworksInfo(img.pid)">
-                    <el-image
-                        :src="img.picture"
-                        lazy
-                        fit="cover"
-                        style="height: 180px;width: 300px;">
-                    </el-image>
-                  </div>
-                  <div style="margin-left: 20px;float: left">
-                    <div @click="toArtworksInfo(img.pid)">pid:{{img.pid}}</div>
-                    <div @click="toArtworksInfo(img.pid)">标题：{{img.subtitle}}</div>
-                    <div @click="toArtworksInfo(img.pid)">收藏数：{{img.likenum}}</div>
-                    <div style="margin-top: 10px">
-                      <el-button type="primary" round v-if="img.liked" @click="favoriteIt(img.pid,img.liked)">取消收藏</el-button>
-                      <el-button type="primary" round v-else @click="favoriteIt(img.pid,img.liked)">收藏</el-button>
+                <transition name="el-fade-in-linear" appear>
+                  <el-card shadow="hover" class="image-card" >
+                    <div style="margin:0;float: left" @click="toArtworksInfo(img.pid)">
+                      <el-image
+                          :src="img.picture"
+                          lazy
+                          fit="cover"
+                          style="height: 180px;width: 300px;">
+                      </el-image>
                     </div>
-                  </div>
-                  <div class="artist">
-                    <img
-                        :src="img.userInfo.userimage"
-                        style="float: left;border-radius: 50%;width: 80px;height: 80px"
-                        alt="用户头像"
-                        @click="toUser(img.uid)">
-                    <div style="float: left;margin-left: 15px;margin-top: 15px">
-                      <span @click="toUser(img.uid)">作者：{{img.userInfo.nickname}}</span>
-                      <span style="margin-left: 15px">
+                    <div style="margin-left: 20px;float: left">
+                      <div @click="toArtworksInfo(img.pid)">pid:{{img.pid}}</div>
+                      <div @click="toArtworksInfo(img.pid)">标题：{{img.subtitle}}</div>
+                      <div @click="toArtworksInfo(img.pid)">收藏数：{{img.likenum}}</div>
+                      <div style="margin-top: 10px">
+                        <el-button type="primary" round v-if="img.liked" @click="favoriteIt(img.pid,img.liked)">取消收藏</el-button>
+                        <el-button type="primary" round v-else @click="favoriteIt(img.pid,img.liked)">收藏</el-button>
+                      </div>
+                    </div>
+                    <div class="artist">
+                      <img
+                          :src="img.userInfo.userimage"
+                          style="float: left;border-radius: 50%;width: 80px;height: 80px"
+                          alt="用户头像"
+                          @click="toUser(img.uid)">
+                      <div style="float: left;margin-left: 15px;margin-top: 15px">
+                        <span @click="toUser(img.uid)">作者：{{img.userInfo.nickname}}</span>
+                        <span style="margin-left: 15px">
                       <el-button type="primary" round v-if="isFollowed(img.userInfo.iid)" @click="followIt(img.userInfo.iid,true)">取消关注</el-button>
                       <el-button type="primary" round v-else @click="followIt(img.userInfo.iid,false)">关注</el-button>
                     </span>
+                      </div>
                     </div>
-                  </div>
-                </el-card>
+                  </el-card>
+                </transition>
               </div>
             </div>
             <el-pagination
@@ -67,31 +69,33 @@
             </div>
             <div v-else>
               <div v-for="(user,index) in userinfo" :key="index" class="user-card">
-                <el-card shadow="hover" class="image-card">
-                  <img
-                      :src="user.userimage"
-                      alt="用户头像"
-                      style="float:left;border-radius: 50%;width: 180px;height: 180px"
-                      @click="toUser(user.iid)">
-                  <div style="float: left;margin-left: 50px;">
-                    <div @click="toUser(user.iid)">uid：{{user.iid}}</div>
-                    <div @click="toUser(user.iid)">昵称：{{user.nickname}}</div>
-                    <div @click="toUser(user.iid)">个人简介：{{user.self}}</div>
-                    <div class="user-artwork">
-                      <div v-for="(view,index) in user.artworks" :key="index" style="width: 500px">
-                        <el-image
-                            :src="view.picture"
-                            style="float: left;width: 160px;height: 100px;margin-left: 5px;margin-top: 15px"
-                            lazy
-                            @click="toArtworksInfo(view.pid)"></el-image>
+                <transition name="el-fade-in-linear" appear>
+                  <el-card shadow="hover" class="image-card">
+                    <img
+                        :src="user.userimage"
+                        alt="用户头像"
+                        style="float:left;border-radius: 50%;width: 180px;height: 180px"
+                        @click="toUser(user.iid)">
+                    <div style="float: left;margin-left: 50px;">
+                      <div @click="toUser(user.iid)">uid：{{user.iid}}</div>
+                      <div @click="toUser(user.iid)">昵称：{{user.nickname}}</div>
+                      <div @click="toUser(user.iid)">个人简介：{{user.self}}</div>
+                      <div class="user-artwork">
+                        <div v-for="(view,index) in user.artworks" :key="index" style="width: 500px">
+                          <el-image
+                              :src="view.picture"
+                              style="float: left;width: 160px;height: 100px;margin-left: 5px;margin-top: 15px"
+                              lazy
+                              @click="toArtworksInfo(view.pid)"></el-image>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                  <div style="float: left;margin-left: 200px;margin-top: 20px">
-                    <el-button type="primary" round v-if="isFollowed(user.iid)" @click="followIt(user.iid,true)">取消关注</el-button>
-                    <el-button type="primary" round v-else @click="followIt(user.iid,false)">关注</el-button>
-                  </div>
-                </el-card>
+                    <div style="float: left;margin-left: 200px;margin-top: 20px">
+                      <el-button type="primary" round v-if="isFollowed(user.iid)" @click="followIt(user.iid,true)">取消关注</el-button>
+                      <el-button type="primary" round v-else @click="followIt(user.iid,false)">关注</el-button>
+                    </div>
+                  </el-card>
+                </transition>
               </div>
             </div>
             <el-pagination

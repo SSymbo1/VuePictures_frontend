@@ -9,55 +9,57 @@
         <h2 style="font-size: 50px;font-family: 'font_aigei_com',sans-serif;">{{welcome}}{{user.nickname}}</h2>
         <h1 style="font-size: 20px;">{{slogn}}</h1>
       </div>
-      <div class="data">
-        <el-card class="data-card" shadow="hover">
-          <div slot="header">
-            <span>最近的投稿</span>
-          </div>
-          <div>
-            <div v-if="time.submit!=='1970-01-01 08:00:00'">{{time.submit}}</div>
-            <div v-else>无投稿</div>
-          </div>
-        </el-card>
-        <el-card class="data-card" shadow="hover">
-          <div slot="header">
-            <span>最近的被收藏的作品</span>
-          </div>
-          <div>
-            <div v-if="time.submit!=='1970-01-01 08:00:00'">{{time.favorite}}</div>
-            <div v-else>无投稿</div>
-          </div>
-        </el-card>
-        <el-card class="data-card" shadow="hover">
-          <div slot="header">
-            <span>最近被浏览的作品</span>
-          </div>
-          <div>
-            <div v-if="time.submit!=='1970-01-01 08:00:00'">{{time.view}}</div>
-            <div v-else>无投稿</div>
-          </div>
-        </el-card>
-        <el-card class="data-card" shadow="hover">
-          <div slot="header">
-            <span>粉丝</span>
-          </div>
-          <div>
-            <div>
-              {{ideas.fans}}
+      <transition name="el-fade-in-linear" appear>
+        <div class="data">
+          <el-card class="data-card" shadow="hover">
+            <div slot="header">
+              <span>最近的投稿</span>
             </div>
-          </div>
-        </el-card>
-        <el-card class="data-card" shadow="hover">
-          <div slot="header">
-            <span>作品总浏览量</span>
-          </div>
-          <div>
+            <div>
+              <div v-if="time.submit!=='1970-01-01 08:00:00'">{{time.submit}}</div>
+              <div v-else>无投稿</div>
+            </div>
+          </el-card>
+          <el-card class="data-card" shadow="hover">
+            <div slot="header">
+              <span>最近的被收藏的作品</span>
+            </div>
+            <div>
+              <div v-if="time.submit!=='1970-01-01 08:00:00'">{{time.favorite}}</div>
+              <div v-else>无投稿</div>
+            </div>
+          </el-card>
+          <el-card class="data-card" shadow="hover">
+            <div slot="header">
+              <span>最近被浏览的作品</span>
+            </div>
+            <div>
+              <div v-if="time.submit!=='1970-01-01 08:00:00'">{{time.view}}</div>
+              <div v-else>无投稿</div>
+            </div>
+          </el-card>
+          <el-card class="data-card" shadow="hover">
+            <div slot="header">
+              <span>粉丝</span>
+            </div>
+            <div>
+              <div>
+                {{ideas.fans}}
+              </div>
+            </div>
+          </el-card>
+          <el-card class="data-card" shadow="hover">
+            <div slot="header">
+              <span>作品总浏览量</span>
+            </div>
+            <div>
             <span>
               {{ideas.views}}
             </span>
-          </div>
-        </el-card>
-      </div>
+            </div>
+          </el-card>
+        </div>
+      </transition>
     </el-main>
   </el-container>
 </template>
