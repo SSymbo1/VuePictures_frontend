@@ -15,14 +15,18 @@
                 <el-button slot="append" icon="el-icon-search" @click="toSearch()"></el-button>
               </el-input>
             </el-menu-item>
-            <el-submenu index="/choose">
-              <template slot="title">选项占位符</template>
-              <el-menu-item index="/choose1">选项1</el-menu-item>
-              <el-menu-item index="/choose2">选项2</el-menu-item>
-              <el-menu-item index="/choose3">选项3</el-menu-item>
-            </el-submenu>
-            <el-menu-item index="/trends">动态</el-menu-item>
-            <el-menu-item index="/ideahome" @click="toSubmit">创作中心</el-menu-item>
+            <el-menu-item index="/message" @click="toMessage">
+              <i class="el-icon-chat-dot-square"></i>
+              <span slot="title">信息</span>
+            </el-menu-item>
+            <el-menu-item index="/trends">
+              <i class="el-icon-s-promotion"></i>
+              <span slot="title">动态</span>
+            </el-menu-item>
+            <el-menu-item index="/ideahome" @click="toSubmit">
+              <i class="el-icon-edit"></i>
+              <span slot="title">创作中心</span>
+            </el-menu-item>
             <el-submenu index="/user">
               <template slot="title"><el-avatar :size="50" :src="circleUrl"></el-avatar></template>
               <el-menu-item index="/personal" @click="toUserInfo()">个人资料</el-menu-item>
@@ -47,6 +51,7 @@
 <script>
 import router from "@/router/router";
 import axios from "axios";
+import {eventBus} from "@/main";
 
 export default {
   data() {
@@ -56,6 +61,7 @@ export default {
       circleUrl:'',
       searchBar:'',
       user:[],
+      nickname:'',
       websocket:null,
     };
   },
@@ -87,25 +93,49 @@ export default {
         this.user=resp.data
       })
     },
+    getUser(id){
+      axios({
+        method:'get',
+        url:'api/user_info_id',
+        params:{
+          uid:id
+        }
+      }).then((resp)=>{
+        for (let obj of resp.data){
+          this.nickname=obj.nickname
+        }
+      })
+    },
     initWebSocket(){
       const token=localStorage.getItem("token")
       if (this.ws===null){
         this.ws=new WebSocket(`ws://localhost:9090/chat_ws/${token}`)
         this.ws.addEventListener('open',(event)=>{
-          console.log("成功连接至websocket服务器")
-          this.$notify({
-            title: '连接成功',
-            message: 'WebSocket连接成功',
-            type: 'success',
-            position:'bottom-right'
-          })
-          console.log(event)
+          console.log("成功连接至websocket服务器!")
         })
         this.ws.addEventListener('message',(event)=>{
           console.log("从websocket服务器获取信息")
-          console.log(JSON.parse(event.data))
+          if ("message" in JSON.parse(event.data)){
+            this.getUser(JSON.parse(event.data).from)
+            this.$notify({
+              title:'你有一条新信息！来自:'+this.nickname,
+              message:JSON.parse(event.data).message,
+              position:'bottom-right',
+              onClick:()=>{
+                this.toNote(JSON.parse(event.data).from)
+              }
+            })
+            eventBus.$emit('ws-note',JSON.parse(event.data))
+          }else {
+            this.$store.commit('set_online',JSON.parse(event.data))
+            eventBus.$emit('ws-message',JSON.parse(event.data))
+          }
+        })
+        this.ws.addEventListener('error',(event)=>{
+          console.log("连接websocket失败!")
         })
       }
+      this.$root.$websocket=this.ws
     },
     //退出登录（注销）
     exit(){
@@ -149,6 +179,11 @@ export default {
       this.searchBar=''
       this.$router.push('/ideahome')
     },
+    toMessage(){
+      this.$router.push({
+        path:'/message_home',
+      })
+    },
     //跳转搜索
     toSearch(){
       if (this.searchBar.length===0){
@@ -174,7 +209,15 @@ export default {
       this.searchBar=''
       this.activeIndex=-1
       this.$router.push("/home")
-    }
+    },
+    toNote(id){
+      this.$router.push({
+        path:'/letter',
+        query:{
+          chat:id
+        }
+      })
+    },
   }
 }
 </script>

@@ -20,6 +20,9 @@ import artwork_manage from "@/views/idea/artwork_manage.vue";
 import fans_manage from "@/views/idea/fans_manage.vue";
 import artwork_data from "@/views/idea/artwork_data.vue";
 import fans_data from "@/views/idea/fans_data.vue";
+import message_center from "@/views/message_center.vue";
+import message_home from '@/views/message/home.vue'
+import message_window from "@/views/message/message_window.vue";
 
 
 Vue.use(VueRouter)
@@ -77,6 +80,20 @@ const router=new VueRouter({
                     component:history
                 },
                 {
+                    path:'/message',
+                    component:message_center,
+                    children:[
+                        {
+                            path: '/message_home',
+                            component: message_home
+                        },
+                        {
+                            path: '/letter',
+                            component: message_window
+                        }
+                    ]
+                },
+                {
                     path:'/idea',
                     component:ideacenter,
                     children:[
@@ -105,7 +122,7 @@ const router=new VueRouter({
                             component:fans_data
                         }
                     ]
-                }
+                },
             ]
         }
     ],

@@ -9,34 +9,36 @@
       <el-button type="primary" round @click="toLogin" class="right-up-btn">登录</el-button>
     </div>
     <div>
-      <GlassCard>
-        <h1>成为</h1>
-        <h3>VuePictures中的一员</h3>
-        <h4>介绍下你自己?</h4>
-        <div></div>
-        <el-form :model="ruleForm" :rules="rules" ref="ruleForm">
-          <el-form-item prop="usr">
-            <el-input v-model="ruleForm.usr" placeholder="请输入用户名" prefix-icon="el-icon-user"></el-input>
-          </el-form-item>
-          <el-form-item prop="pwd">
-            <el-input v-model="ruleForm.pwd" placeholder="请输入密码" prefix-icon="el-icon-lock" show-password></el-input>
-          </el-form-item>
-          <el-form-item prop="rpwd">
-            <el-input v-model="ruleForm.rpwd" placeholder="请再次输入密码" prefix-icon="el-icon-lock" show-password></el-input>
-          </el-form-item>
-          <el-form-item prop="email">
-            <el-input v-model="ruleForm.email" placeholder="请输入邮箱地址" prefix-icon="el-icon-message" style="width: 200px;float: left"></el-input>
-          </el-form-item>
-          <el-button type="primary" round @click="getCaptcha" :disabled="disable" style="float: none;position: relative;top: -63px;left: 100px;width: 117px;height: 39px">{{btn}}</el-button>
-          <el-form-item prop="captcha">
-            <el-input v-model="ruleForm.captcha" placeholder="请输入验证码" prefix-icon="el-icon-link"></el-input>
-          </el-form-item>
-          <el-form-item>
-            <el-button type="primary" round @click="submitForm" style="width:100%;margin-bottom:15px;">注册</el-button>
-          </el-form-item>
-        </el-form>
-        <el-divider></el-divider>
-      </GlassCard>
+      <transition name="el-fade-in-linear" appear>
+        <GlassCard>
+          <h1>成为</h1>
+          <h3>VuePictures中的一员</h3>
+          <h4>介绍下你自己?</h4>
+          <div></div>
+          <el-form :model="ruleForm" :rules="rules" ref="ruleForm">
+            <el-form-item prop="usr">
+              <el-input v-model="ruleForm.usr" placeholder="请输入用户名" prefix-icon="el-icon-user"></el-input>
+            </el-form-item>
+            <el-form-item prop="pwd">
+              <el-input v-model="ruleForm.pwd" placeholder="请输入密码" prefix-icon="el-icon-lock" show-password></el-input>
+            </el-form-item>
+            <el-form-item prop="rpwd">
+              <el-input v-model="ruleForm.rpwd" placeholder="请再次输入密码" prefix-icon="el-icon-lock" show-password></el-input>
+            </el-form-item>
+            <el-form-item prop="email">
+              <el-input v-model="ruleForm.email" placeholder="请输入邮箱地址" prefix-icon="el-icon-message" style="width: 200px;float: left"></el-input>
+            </el-form-item>
+            <el-button type="primary" round @click="getCaptcha" :disabled="disable" style="float: none;position: relative;top: -63px;left: 100px;width: 117px;height: 39px">{{btn}}</el-button>
+            <el-form-item prop="captcha">
+              <el-input v-model="ruleForm.captcha" placeholder="请输入验证码" prefix-icon="el-icon-link"></el-input>
+            </el-form-item>
+            <el-form-item>
+              <el-button type="primary" round @click="submitForm" style="width:100%;margin-bottom:15px;">注册</el-button>
+            </el-form-item>
+          </el-form>
+          <el-divider></el-divider>
+        </GlassCard>
+      </transition>
     </div>
   </div>
 </template>

@@ -9,24 +9,26 @@
       <el-button type="primary" round @click="toRegister" class="right-up-btn">注册</el-button>
     </div>
     <div>
-      <GlassCard>
-        <h1>登录到</h1>
-        <h3>— VuePictures —</h3>
-        <h4>你 是 谁?</h4>
-        <div></div>
-        <el-form :model="ruleForm" :rules="rules" ref="ruleForm">
-          <el-form-item prop="usr">
-            <el-input v-model="ruleForm.usr" placeholder="请输入用户名" prefix-icon="el-icon-user"></el-input>
-          </el-form-item>
-          <el-form-item prop="pwd">
-            <el-input v-model="ruleForm.pwd" placeholder="请输入密码" prefix-icon="el-icon-lock" show-password></el-input>
-          </el-form-item>
-          <el-form-item>
-            <el-button type="primary" round @click="submitForm()" style="width:100%;margin-bottom:15px;">登录</el-button>
-          </el-form-item>
-        </el-form>
-        <el-divider></el-divider>
-      </GlassCard>
+      <transition name="el-fade-in-linear" appear>
+        <GlassCard>
+          <h1>登录到</h1>
+          <h3>— VuePictures —</h3>
+          <h4>你 是 谁?</h4>
+          <div></div>
+          <el-form :model="ruleForm" :rules="rules" ref="ruleForm">
+            <el-form-item prop="usr">
+              <el-input v-model="ruleForm.usr" placeholder="请输入用户名" prefix-icon="el-icon-user"></el-input>
+            </el-form-item>
+            <el-form-item prop="pwd">
+              <el-input v-model="ruleForm.pwd" placeholder="请输入密码" prefix-icon="el-icon-lock" show-password></el-input>
+            </el-form-item>
+            <el-form-item>
+              <el-button type="primary" round @click="submitForm()" style="width:100%;margin-bottom:15px;">登录</el-button>
+            </el-form-item>
+          </el-form>
+          <el-divider></el-divider>
+        </GlassCard>
+      </transition>
     </div>
     <router-view></router-view>
   </div>

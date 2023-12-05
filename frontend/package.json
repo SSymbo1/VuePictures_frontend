@@ -10,6 +10,7 @@
     "@kummy/el-form-schema": "^1.2.11",
     "axios": "^1.4.0",
     "core-js": "^3.8.3",
+    "default-passive-events": "^2.0.0",
     "echarts": "^5.4.3",
     "element-ui": "^2.15.13",
     "nprogress": "^0.2.0",

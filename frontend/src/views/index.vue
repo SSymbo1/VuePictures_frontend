@@ -6,16 +6,18 @@
       </transition-group>
     </div>
     <div>
-      <GlassCard>
-        <h1>VuePictures</h1>
-        <h3>一个正在测试的插画网站</h3>
-        <div></div>
-        <div class="button-container">
-          <el-button type="primary" round @click="toLogin" style="width:100%;margin-bottom:15px;">登录</el-button>
-          <el-button round @click="toRegister" style="width:100%;margin-bottom:15px;margin-left: 0">注册</el-button>
-        </div>
-        <el-divider></el-divider>
-      </GlassCard>
+      <transition name="el-fade-in-linear" appear>
+        <GlassCard>
+          <h1>VuePictures</h1>
+          <h3>一个正在测试的插画网站</h3>
+          <div></div>
+          <div class="button-container">
+            <el-button type="primary" round @click="toLogin" style="width:100%;margin-bottom:15px;">登录</el-button>
+            <el-button round @click="toRegister" style="width:100%;margin-bottom:15px;margin-left: 0">注册</el-button>
+          </div>
+          <el-divider></el-divider>
+        </GlassCard>
+      </transition>
     </div>
   </div>
 </template>
