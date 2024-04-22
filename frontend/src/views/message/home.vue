@@ -9,6 +9,7 @@
         <h2 style="font-size: 50px;font-family: 'font_aigei_com',sans-serif;">你好啊！{{user.nickname}}</h2>
         <h1 style="font-size: 20px;">{{slogn}}</h1>
       </div>
+      <br/>
       <transition name="el-fade-in-linear" appear>
         <div class="data">
           <el-card class="data-card" shadow="hover">

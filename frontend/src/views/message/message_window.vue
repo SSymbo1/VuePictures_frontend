@@ -8,7 +8,7 @@
             <div style="text-align: center; line-height: 50px;" v-for="(user,index) in acceptUserInfo" :key="index">
               {{user.nickname}}
             </div>
-            <div style="height: 350px; overflow:auto; border-top: 1px solid #ccc" v-html="content"></div>
+            <div style="height: 350px; overflow:auto; border-top: 1px solid #ccc" v-html="content" ref="messageContainer"></div>
             <div style="height: 200px">
             <textarea v-model="text" style="resize: none;height: 110px; width: 760px; padding: 20px; border: none; border-top: 1px solid #ccc;
              border-bottom: 1px solid #ccc; outline: none"></textarea>
@@ -142,6 +142,9 @@ export default {
             "</div>";
       }
       this.content += html;
+      this.$nextTick(() => {
+        this.$refs.messageContainer.scrollTop = this.$refs.messageContainer.scrollHeight;
+      });
     },
     showLoading(){
       this.loading=true

@@ -1,17 +1,18 @@
 <template>
   <el-container>
-    <el-main>
-
-    </el-main>
   </el-container>
 </template>
 
 <script>
+import axios from "axios";
+
 export default {
   data(){
     return{
-
     }
+  },
+  methods: {
+
   }
 }
 </script>
